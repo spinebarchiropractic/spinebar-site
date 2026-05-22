@@ -1,65 +1,93 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main className="min-h-screen bg-[#f7f1e8] text-[#173326]">
+      <section className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-16 lg:px-12">
+        
+        <div className="mb-10 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img
+              src="/logo/spinebar-logo.png"
+              alt="Spine Bar Chiropractic"
+              className="h-50 w-50 object-contain"
             />
-            Deploy Now
-          </a>
+
+            <div>
+              <h1 className="text-2xl font-serif tracking-wide">
+                Spine Bar Chiropractic
+              </h1>
+
+              <p className="text-sm uppercase tracking-[0.35em] text-[#9d8753]">
+                Toluca Lake
+              </p>
+            </div>
+          </div>
+
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://practice.chirotouch.com/portal/spinebarchiropractic"
             target="_blank"
-            rel="noopener noreferrer"
+            className="rounded-full bg-[#173326] px-6 py-3 text-sm font-semibold text-[#f7f1e8] transition hover:bg-[#0f241a]"
           >
-            Documentation
+            Book Appointment
           </a>
         </div>
-      </main>
-    </div>
+
+        <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+          <div>
+            <p className="mb-6 text-sm uppercase tracking-[0.3em] text-[#9d8753]">
+              Holistic Chiropractic Care In Toluca Lake
+            </p>
+
+            <h2 className="max-w-xl font-serif text-6xl leading-none tracking-tight lg:text-8xl">
+              Care that feels considered, not rushed.
+            </h2>
+
+            <p className="mt-8 max-w-xl text-lg leading-9 text-[#44554a]">
+              A modern chiropractic and wellness office built around movement,
+              recovery, honest guidance, and the body's natural ability to
+              repair and adapt.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="https://practice.chirotouch.com/portal/spinebarchiropractic"
+                target="_blank"
+                className="rounded-full bg-[#173326] px-7 py-4 text-sm font-semibold text-[#f7f1e8] transition hover:bg-[#0f241a]"
+              >
+                Book Appointment
+              </a>
+
+              <button className="rounded-full border border-[#c9b48a] px-7 py-4 text-sm font-semibold text-[#173326]">
+                Explore Services
+              </button>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-8 text-sm text-[#6f6b63]">
+              <span>Toluca Lake</span>
+              <span>747-774-7144</span>
+              <span>Mon–Fri 9–5 · Sat 9–1</span>
+            </div>
+          </div>
+
+          <div className="rounded-[40px] border border-[#e5d9c4] bg-[#efe7db] p-10">
+            <img
+              src="/logo/spinebar-logo.png"
+              alt="Spine Bar Chiropractic"
+              className="mx-auto mb-8 h-32 w-32 object-contain"
+            />
+
+            <h3 className="text-center font-serif text-4xl">
+              Modern Chiropractic.
+            </h3>
+
+            <p className="mx-auto mt-6 max-w-md text-center text-lg leading-8 text-[#55655a]">
+              Built for patients looking for honest care, thoughtful treatment,
+              wellness guidance, and a calmer healthcare experience.
+            </p>
+          </div>
+
+        </div>
+      </section>
+    </main>
   );
 }
