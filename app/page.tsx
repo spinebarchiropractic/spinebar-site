@@ -2,7 +2,8 @@ import { Hero } from "@/components/sections/Hero";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { FAQSection } from "@/components/sections/FAQSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+// Testimonials hidden until real patient reviews are collected.
+// import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { BookingCTA } from "@/components/sections/BookingCTA";
 import { ContactSection } from "@/components/sections/ContactSection";
 
@@ -12,7 +13,8 @@ export default function Home() {
       <Hero />
       <ServicesSection preview />
       <AboutSection preview />
-      <TestimonialsSection />
+      {/* Testimonials hidden until real patient reviews are collected. */}
+      {/* <TestimonialsSection /> */}
       <FAQSection />
       <BookingCTA />
       <ContactSection />
