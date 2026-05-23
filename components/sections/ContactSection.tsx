@@ -11,7 +11,7 @@ const contactItems = [
     icon: MapPin,
     label: "Location",
     value: SITE.address,
-    href: `https://maps.google.com/?q=${encodeURIComponent(SITE.address)}`,
+    href: SITE.mapsUrl,
   },
   {
     icon: Phone,
@@ -91,7 +91,7 @@ export function ContactSection() {
           <div className="overflow-hidden rounded-3xl border border-cream-border bg-cream-dark">
             <iframe
               title="Spine Bar Chiropractic location"
-              src="https://maps.google.com/maps?q=10150+Riverside+Dr,+Toluca+Lake,+CA+91602&output=embed"
+              src={SITE.mapsEmbedUrl}
               className="h-64 w-full grayscale-[30%] contrast-[1.05] md:h-80 lg:h-96"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

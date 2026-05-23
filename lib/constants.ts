@@ -1,3 +1,5 @@
+const ADDRESS = "10918 Riverside Dr, Toluca Lake, CA 91602";
+
 export const SITE = {
   name: "Spine Bar Chiropractic",
   location: "Toluca Lake",
@@ -5,7 +7,9 @@ export const SITE = {
   phoneHref: "tel:7477747144",
   email: "info@spinebarchiropractic.com",
   emailHref: "mailto:info@spinebarchiropractic.com",
-  address: "10150 Riverside Dr, Toluca Lake, CA 91602",
+  address: ADDRESS,
+  mapsUrl: `https://maps.google.com/?q=${encodeURIComponent(ADDRESS)}`,
+  mapsEmbedUrl: `https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`,
   hours: "Mon–Fri 9–5 · Sat 9–1",
   bookingUrl: "https://practice.chirotouch.com/portal/spinebarchiropractic",
   tagline: "Care that feels considered, not rushed.",
