@@ -23,6 +23,28 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
+  openGraph: {
+    title: "Spine Bar Chiropractic | Toluca Lake",
+    description:
+      "Modern chiropractic and wellness care in Toluca Lake. Book with Dr. Arthur Chakrian, DC.",
+    url: "https://spinebar.com",
+    siteName: "Spine Bar Chiropractic",
+    images: [
+      {
+        url: "https://spinebar.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Spine Bar Chiropractic – Toluca Lake",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spine Bar Chiropractic | Toluca Lake",
+    description: "Modern chiropractic and wellness care in Toluca Lake.",
+    images: ["https://spinebar.com/og-image.png"],
+  },
 };
 
 export default function RootLayout({
