@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Spine Bar Chiropractic",
     images: [
       {
-        url: "https://spinebar.com/logo/spinebar-logo.png",
+        url: "https://spinebar.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Spine Bar Chiropractic – Toluca Lake",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Spine Bar Chiropractic | Toluca Lake",
     description: "Modern chiropractic and wellness care in Toluca Lake.",
-    images: ["https://spinebar.com/logo/spinebar-logo.png"],
+    images: ["https://spinebar.com/og-image.png"],
   },
 };
 
