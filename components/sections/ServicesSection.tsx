@@ -1,12 +1,13 @@
 "use client";
 
 import {
-  Activity,
+  Baby,
+  ClipboardCheck,
   Heart,
-  Shield,
+  Leaf,
+  RefreshCw,
   Sparkles,
   Target,
-  Zap,
 } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -14,12 +15,13 @@ import { Button } from "@/components/ui/Button";
 import { SERVICES } from "@/lib/constants";
 
 const iconMap = {
-  spine: Sparkles,
-  movement: Activity,
-  wellness: Heart,
+  newPatient: ClipboardCheck,
+  adjustment: Sparkles,
   tissue: Target,
-  sports: Zap,
-  preventive: Shield,
+  wellnessInitial: Leaf,
+  wellnessFollowUp: RefreshCw,
+  prenatal: Heart,
+  pediatric: Baby,
 } as const;
 
 type ServicesSectionProps = {

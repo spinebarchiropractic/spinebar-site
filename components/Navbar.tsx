@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SITE, NAV_LINKS } from "@/lib/constants";
+import { SITE, NAV_LINKS, DOCTOR } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 export function Navbar() {
@@ -46,8 +46,8 @@ export function Navbar() {
             <p className="font-serif text-lg leading-tight tracking-wide text-green lg:text-xl">
               {SITE.name}
             </p>
-            <p className="text-[10px] uppercase tracking-[0.35em] text-gold lg:text-xs">
-              {SITE.location}
+            <p className="mt-0.5 text-[10px] leading-snug tracking-[0.12em] text-gold lg:text-[11px]">
+              {DOCTOR.name} · {SITE.location}
             </p>
           </div>
         </Link>

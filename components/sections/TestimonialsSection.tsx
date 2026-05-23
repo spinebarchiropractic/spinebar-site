@@ -1,11 +1,15 @@
 "use client";
 
-import { Quote } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { TESTIMONIALS } from "@/lib/constants";
+// import { Quote } from "lucide-react";
+// import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
+// import { SectionHeading } from "@/components/ui/SectionHeading";
+// import { TESTIMONIALS } from "@/lib/constants";
 
 export function TestimonialsSection() {
+  // Testimonials hidden until real patient reviews are collected.
+  return null;
+
+  /* Restore when real reviews are available:
   return (
     <section className="border-t border-cream-border bg-cream-dark py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
@@ -48,4 +52,5 @@ export function TestimonialsSection() {
       </div>
     </section>
   );
+  */
 }
