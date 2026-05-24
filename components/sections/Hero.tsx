@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { SITE } from "@/lib/constants";
+import { SITE, DOCTOR } from "@/lib/constants";
 
 export function Hero() {
   return (
@@ -43,21 +43,38 @@ export function Hero() {
           </FadeIn>
 
           <FadeIn delay={0.15} direction="left">
-            <div className="rounded-[40px] border border-cream-border bg-cream-dark p-10 lg:p-12">
-              <Image
-                src="/logo/spinebar-logo.png"
-                alt={SITE.name}
-                width={128}
-                height={128}
-                className="mx-auto mb-8 h-28 w-28 object-contain lg:h-32 lg:w-32"
-              />
-              <h2 className="text-center font-serif text-3xl lg:text-4xl">
-                Modern Chiropractic.
-              </h2>
-              <p className="mx-auto mt-6 max-w-md text-center text-lg leading-relaxed text-green-light">
-                Built for patients looking for honest care, thoughtful treatment,
-                wellness guidance, and a calmer healthcare experience.
-              </p>
+            <div className="overflow-hidden rounded-[40px] border border-cream-border bg-cream-dark">
+              {/* Photo placeholder — replace src with real headshot when ready */}
+              <div className="flex aspect-[4/3] flex-col items-center justify-center gap-3 border-b border-cream-border bg-cream/40">
+                <Image
+                  src="/logo/spinebar-logo.png"
+                  alt={SITE.name}
+                  width={64}
+                  height={64}
+                  className="h-14 w-14 object-contain opacity-40"
+                />
+                <p className="text-xs uppercase tracking-[0.25em] text-gold/60">
+                  Photo coming soon
+                </p>
+              </div>
+              <div className="space-y-3 p-8">
+                <p className="font-serif text-xl text-green">{DOCTOR.name}</p>
+                <p className="text-sm text-green-muted">
+                  California-licensed chiropractor · Spine Bar Chiropractic
+                </p>
+                <div className="space-y-2 pt-2">
+                  {[
+                    "Manual diversified approach",
+                    "Solo practice — every visit with Dr. Chakrian",
+                    "Functional medicine perspective",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-2.5">
+                      <div className="h-px w-4 flex-shrink-0 bg-gold/50" />
+                      <p className="text-xs text-green-muted">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </FadeIn>
         </div>
