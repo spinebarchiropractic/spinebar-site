@@ -28,43 +28,43 @@ export const SERVICES = [
   {
     title: "New Patient Exam & Assessment",
     description:
-      "Your first visit includes a full health history review, comprehensive assessment, postural analysis, and your first adjustment. We take the time to understand what's actually going on.",
+      "Before anything else, we listen. Your first visit is a full conversation — health history, goals, what's been bothering you and for how long. We pair that with a comprehensive physical assessment and postural analysis, and your first adjustment. You'll leave knowing exactly what's going on and what we plan to do about it.",
     icon: "newPatient",
   },
   {
     title: "Chiropractic Adjustment",
     description:
-      "Precise, manual diversified adjustments tailored to your spine and extremities. Every adjustment is considered, not rushed.",
+      "Every adjustment at Spine Bar is manual, specific, and done with intention. Dr. Chakrian uses a diversified approach — adapting to your body, not the other way around. Whether it's your spine, your hips, or your extremities, the goal is always the same: restore movement, reduce pain, and help your body do what it's designed to do.",
     icon: "adjustment",
   },
   {
     title: "Soft Tissue Therapy",
     description:
-      "Targeted myofascial release and muscle work to complement your adjustment, reduce chronic tension, and support lasting relief between visits.",
+      "Tight muscles don't release on their own. Targeted myofascial release and hands-on muscle work get to the root of chronic tension, complement your adjustment, and give your body a better baseline to heal from. Most patients notice the difference the same day.",
     icon: "tissue",
   },
   {
     title: "Wellness Consultation – Initial",
     description:
-      "A dedicated first session with Dr. Chakrian covering nutrition, supplementation, movement, sleep, bloodwork review, and recovery. We build a full picture of your health before making any recommendations.",
+      "This isn't a typical doctor's visit. We go deep — nutrition, supplementation, sleep, movement, bloodwork if you have it, and the full picture of how your body is actually functioning. Dr. Chakrian will tell you what he sees, what he recommends, and why. No vague advice, no upsells.",
     icon: "wellnessInitial",
   },
   {
     title: "Wellness Consultation – Follow-Up",
     description:
-      "A focused check-in to review your progress, refine protocols, and adjust recommendations as your health evolves. For established wellness patients only.",
+      "Your body changes, and your plan should too. Follow-up sessions are for established wellness patients to check in on what's working, what isn't, and where to adjust. Expect honest answers and a plan that actually evolves with you.",
     icon: "wellnessFollowUp",
   },
   {
     title: "Prenatal Chiropractic",
     description:
-      "Gentle chiropractic care throughout pregnancy, focused on pelvic alignment, comfort, and supporting the body through each trimester.",
+      "Pregnancy changes everything — your posture, your pelvis, your center of gravity. Gentle, pregnancy-safe adjustments help keep your body comfortable and aligned through every trimester. Dr. Chakrian adapts technique and positioning to wherever you are in your pregnancy.",
     icon: "prenatal",
   },
   {
     title: "Pediatric Chiropractic",
     description:
-      "Safe, gentle chiropractic care for children with age-appropriate techniques.",
+      "Kids take plenty of hits — from falls, from backpacks, from hours hunched over screens. Pediatric adjustments are light-touch and age-appropriate, designed to support healthy development and address issues early before they become bigger ones.",
     icon: "pediatric",
   },
 ] as const;
@@ -73,56 +73,35 @@ export const FAQ_ITEMS = [
   {
     question: "What should I expect at my first visit?",
     answer:
-      "Your first visit includes a thorough consultation, health history review, and a physical assessment. We'll discuss your goals, explain our findings, and outline a personalized care plan — no pressure, no surprises.",
+      "Your first visit is a real conversation, not a quick scan. We'll go through your health history, talk about your goals, do a thorough physical assessment, and explain exactly what we find. Most patients get their first adjustment the same day. No pressure, no surprises.",
   },
   {
     question: "Do you accept insurance?",
     answer:
-      "We currently accept Personal Injury (PI) liens and Workers' Compensation. We also work with patients on a cash-pay basis and can provide a superbill for reimbursement through your PPO. We are actively credentialing with major insurance networks — contact us to ask about your specific plan.",
+      "We currently accept Personal Injury (PI) liens and Workers' Compensation. We also work with patients on a cash-pay basis and can provide a superbill for PPO reimbursement. We are actively credentialing with major insurance networks — contact us to ask about your specific plan.",
   },
   {
     question: "How long is a typical appointment?",
     answer:
-      "Initial visits typically run 45–60 minutes. Follow-up appointments are usually 20–30 minutes — enough time for quality care without feeling rushed.",
+      "Initial visits typically run 45–60 minutes — enough time to actually understand what's going on. Follow-up appointments are usually 20–30 minutes. We don't rush.",
   },
   {
     question: "Is chiropractic care safe?",
     answer:
-      "Chiropractic care is one of the safest non-invasive treatment options available. We use evidence-based techniques and always adapt treatment to your comfort level and medical history.",
+      "Chiropractic care is one of the safest non-invasive treatment options available. We use evidence-based techniques and always adapt to your comfort level and medical history. If something isn't the right fit, we'll tell you that too.",
   },
   {
     question: "How often will I need to come in?",
     answer:
-      "That depends entirely on your condition and goals. Some patients see us weekly during acute phases; others come monthly for maintenance. We'll always be honest about what you actually need.",
+      "That depends entirely on your condition and goals. Some patients come weekly during an acute phase; others come monthly for maintenance. We'll always be honest about what you actually need — not what maximizes visit count.",
   },
   {
     question: "Do I need a referral?",
     answer:
-      "No referral is needed. You can book directly through our online portal or call our office. We welcome new patients and walk-ins when availability allows.",
+      "No referral needed. Book directly through our online portal, call us, or just show up when we have availability. We welcome new patients.",
   },
 ] as const;
 
-// Testimonials hidden until real patient reviews are collected.
-// export const TESTIMONIALS = [
-//   {
-//     quote:
-//       "Finally, a chiropractor who listens. Dr. takes the time to explain everything and never makes you feel like you're on an assembly line.",
-//     author: "Sarah M.",
-//     detail: "Toluca Lake patient",
-//   },
-//   {
-//     quote:
-//       "I've been to many chiropractors over the years. Spine Bar is different — thoughtful, modern, and genuinely focused on getting you better.",
-//     author: "James R.",
-//     detail: "Studio City patient",
-//   },
-//   {
-//     quote:
-//       "The office feels calm and premium, but the care is what really stands out. I leave every visit feeling heard and physically better.",
-//     author: "Elena K.",
-//     detail: "Burbank patient",
-//   },
-// ] as const;
 export const TESTIMONIALS = [] as const;
 
 export const DOCTOR = {
@@ -132,26 +111,26 @@ export const DOCTOR = {
   headshotAlt: "Dr. Arthur Chakrian, DC — Spine Bar Chiropractic",
   headline: "One-on-one care, built around you.",
   previewIntro:
-    "California-licensed chiropractor and founder of Spine Bar Chiropractic. Diversified, manual-first adjustments — every visit is with Dr. Chakrian.",
+    "Spine Bar was built around a simple idea: you deserve a chiropractor who listens, explains what they find, and treats you like an adult. Every visit is one-on-one with Dr. Chakrian — no handoffs, no rushing.",
   bio: [
-    "Dr. Arthur Chakrian is a California-licensed chiropractor and the founder of Spine Bar Chiropractic in Toluca Lake. He practices a diversified, manual-first approach. Every visit is one-on-one with him.",
-    "Beyond adjustments, Dr. Chakrian brings a functional medicine perspective to patient care — integrating clinical nutrition, supplementation, movement, and recovery into every treatment plan when appropriate. If you want honest answers about your health, not just a quick adjustment and a checkout, this is the practice for you.",
+    "Dr. Arthur Chakrian started Spine Bar because he was tired of the assembly-line model — where you wait 20 minutes, get adjusted in 7, and leave without understanding any of it. This practice is built around the opposite: every visit is one-on-one with him, unhurried, and grounded in actually figuring out what your body needs.",
+    "He uses a manual, diversified approach to chiropractic care — hands-on, specific, adapted to you. When relevant, he also brings a functional medicine lens: nutrition, supplementation, recovery, and the lifestyle factors that either support or undermine your health. The goal is never just to get you out of pain. It's to help you understand what was causing it.",
   ],
   highlights: [
     {
       title: "Manual-First Chiropractic",
       description:
-        "Diversified, hands-on adjustments tailored to your body — delivered one-on-one by Dr. Chakrian at every visit.",
+        "Every adjustment is done by hand, by Dr. Chakrian, every time. No assistants, no drop tables, no cookie-cutter protocols.",
     },
     {
       title: "Functional Medicine Lens",
       description:
-        "Clinical nutrition, supplementation, movement, and recovery integrated into your plan when it supports your goals.",
+        "When your pain has a lifestyle component — and it usually does — we address that too. Nutrition, supplementation, sleep, and movement guidance built into your care.",
     },
     {
       title: "Honest, Patient-First Care",
       description:
-        "Clear answers and thoughtful recommendations — not a rushed adjustment and a quick checkout.",
+        "You'll always know what we found, what we recommend, and why. No pressure, no upsells, no mystery.",
     },
   ],
 } as const;
