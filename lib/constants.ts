@@ -12,9 +12,9 @@ export const SITE = {
   mapsEmbedUrl: `https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`,
   hours: "Mon–Fri 9–5 · Sat 9–1",
   bookingUrl: "https://practice.chirotouch.com/portal/spinebarchiropractic",
-  tagline: "Care that feels considered, not rushed.",
+  tagline: "The last chiropractor you'll want to try.",
   description:
-    "A modern chiropractic and wellness office built around movement, recovery, honest guidance, and the body's natural ability to repair and adapt.",
+    "A solo practice in Toluca Lake where every visit is one-on-one with Dr. Chakrian. Real time, honest answers, and care that actually gets to the root of what's going on.",
 } as const;
 
 export const NAV_LINKS = [
