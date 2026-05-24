@@ -3,7 +3,7 @@ const ADDRESS = "10918 Riverside Dr, Toluca Lake, CA 91602";
 export const SITE = {
   name: "Spine Bar Chiropractic",
   location: "Toluca Lake",
-  phone: "747-774-7144",
+  phone: "747-774-7144"
   phoneHref: "tel:7477747144",
   email: "info@spinebarchiropractic.com",
   emailHref: "mailto:info@spinebarchiropractic.com",
@@ -64,7 +64,7 @@ export const SERVICES = [
   {
     title: "Pediatric Chiropractic",
     description:
-      "Kids take plenty of hits — from falls, from backpacks, from hours hunched over screens. Pediatric adjustments are light-touch and age-appropriate, designed to support healthy development and address issues early before they become bigger ones.",
+      "For patients under 18. Kids take plenty of hits — from falls, from backpacks, from hours hunched over screens. Pediatric adjustments are light-touch and age-appropriate, designed to support healthy development and address issues early before they become bigger ones.",
     icon: "pediatric",
   },
 ] as const;
