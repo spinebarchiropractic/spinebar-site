@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Phone, Clock, Mail } from "lucide-react";
+import { MapPin, Phone, Clock, Mail, ExternalLink } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -87,16 +87,36 @@ export function ContactSection() {
           </StaggerContainer>
         </div>
 
+        {/* Directions card — replaces broken map embed */}
         <FadeIn className="mt-16">
-          <div className="overflow-hidden rounded-3xl border border-cream-border bg-cream-dark">
-            <iframe
-              title="Spine Bar Chiropractic location"
-              src={SITE.mapsEmbedUrl}
-              className="h-64 w-full grayscale-[30%] contrast-[1.05] md:h-80 lg:h-96"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+          <a
+            href={SITE.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block overflow-hidden rounded-3xl border border-cream-border bg-cream-dark transition-all duration-300 hover:border-gold-light hover:shadow-[0_8px_30px_-12px_rgba(157,135,83,0.2)]"
+          >
+            <div className="flex items-center justify-between p-8 lg:p-10">
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-gold">
+                  Find Us
+                </p>
+                <p className="mt-2 font-serif text-2xl text-green lg:text-3xl">
+                  {SITE.address}
+                </p>
+                <p className="mt-1 text-sm text-green-muted">
+                  Free street parking available on Riverside Dr
+                </p>
+              </div>
+              <div className="ml-6 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-cream-border bg-cream text-gold transition-all duration-300 group-hover:border-green group-hover:bg-green group-hover:text-cream">
+                <ExternalLink size={18} strokeWidth={1.5} />
+              </div>
+            </div>
+            <div className="border-t border-cream-border px-8 py-4 lg:px-10">
+              <span className="text-sm font-medium text-gold transition-colors duration-300 group-hover:text-green">
+                Open in Google Maps →
+              </span>
+            </div>
+          </a>
         </FadeIn>
       </div>
     </section>
