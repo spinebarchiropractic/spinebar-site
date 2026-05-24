@@ -12,7 +12,7 @@ export const SITE = {
   mapsEmbedUrl: `https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`,
   hours: "Mon–Fri 9–5 · Sat 9–1",
   bookingUrl: "https://practice.chirotouch.com/portal/spinebarchiropractic",
-  tagline: "The last chiropractor you'll want to try.",
+  tagline: "Care you'll actually look forward to.",
   description:
     "A solo practice in Toluca Lake where every visit is one-on-one with Dr. Chakrian. Real time, honest answers, and care that actually gets to the root of what's going on.",
 } as const;
@@ -46,7 +46,7 @@ export const SERVICES = [
   {
     title: "Wellness Consultation – Initial",
     description:
-      "This isn't a typical doctor's visit. We go deep — nutrition, supplementation, sleep, movement, bloodwork if you have it, and the full picture of how your body is actually functioning. Dr. Chakrian will tell you what he sees, what he recommends, and why. No vague advice, no upsells.",
+      "This isn't a typical doctor's visit. We go deep — nutrition, supplementation, sleep, movement, bloodwork if you have it, and the full picture of how your body is actually functioning. Dr. Chakrian will tell you what he sees, what he recommends, and why. No vague advice, no hidden agendas.",
     icon: "wellnessInitial",
   },
   {
@@ -120,7 +120,7 @@ export const DOCTOR = {
     {
       title: "Manual-First Chiropractic",
       description:
-        "Every adjustment is done by hand, by Dr. Chakrian, every time. No assistants, no drop tables, no cookie-cutter protocols.",
+        "Every adjustment is done by hand, by Dr. Chakrian, every time. No assistants, no cookie-cutter protocols.",
     },
     {
       title: "Functional Medicine Lens",
@@ -130,7 +130,7 @@ export const DOCTOR = {
     {
       title: "Honest, Patient-First Care",
       description:
-        "You'll always know what we found, what we recommend, and why. No pressure, no upsells, no mystery.",
+        "You'll always know what we found, what we recommend, and why. No pressure, no mystery.",
     },
   ],
 } as const;
