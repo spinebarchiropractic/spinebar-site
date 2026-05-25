@@ -28,43 +28,43 @@ export const SERVICES = [
   {
     title: "New Patient Exam & Assessment",
     description:
-      "Before anything else, we listen. Your first visit is a full conversation — health history, goals, what's been bothering you and for how long. We pair that with a comprehensive physical assessment and postural analysis, and your first adjustment. You'll leave knowing exactly what's going on and what we plan to do about it.",
+      "Health history, postural analysis, orthopedic testing, and hands-on assessment. First treatment same visit.",
     icon: "newPatient",
   },
   {
     title: "Chiropractic Adjustment",
     description:
-      "Every adjustment at Spine Bar is manual, specific, and done with intention. Dr. Chakrian uses a diversified approach — adapting to your body, not the other way around. Whether it's your spine, your hips, or your extremities, the goal is always the same: restore movement, reduce pain, and help your body do what it's designed to do.",
+      "Manual locating and mobilizing areas of joint restriction, muscle tension, and fixation throughout the spine and extremities. Every adjustment is specific to you.",
     icon: "adjustment",
   },
   {
     title: "Soft Tissue Therapy",
     description:
-      "Tight muscles don't release on their own. Targeted myofascial release and hands-on muscle work get to the root of chronic tension, complement your adjustment, and give your body a better baseline to heal from. Most patients notice the difference the same day.",
+      "Myofascial release and targeted muscle work to reduce tension, restore range of motion, and reinforce the adjustment.",
     icon: "tissue",
   },
   {
     title: "Wellness Consultation – Initial",
     description:
-      "This isn't a typical doctor's visit. We go deep — nutrition, supplementation, sleep, movement, bloodwork if you have it, and the full picture of how your body is actually functioning. Dr. Chakrian will tell you what he sees, what he recommends, and why. No vague advice, no hidden agendas.",
+      "Full review of labs, nutrition, supplementation, sleep, and lifestyle.",
     icon: "wellnessInitial",
   },
   {
     title: "Wellness Consultation – Follow-Up",
     description:
-      "Your body changes, and your plan should too. Follow-up sessions are for established wellness patients to check in on what's working, what isn't, and where to adjust. Expect honest answers and a plan that actually evolves with you.",
+      "Progress review and protocol refinement. For established wellness patients only.",
     icon: "wellnessFollowUp",
   },
   {
     title: "Prenatal Chiropractic",
     description:
-      "Pregnancy changes everything — your posture, your pelvis, your center of gravity. Gentle, pregnancy-safe adjustments help keep your body comfortable and aligned through every trimester. Dr. Chakrian adapts technique and positioning to wherever you are in your pregnancy.",
+      "Modified adjustments addressing pelvic alignment, round ligament tension, and postural adaptation throughout pregnancy.",
     icon: "prenatal",
   },
   {
     title: "Pediatric Chiropractic",
     description:
-      "For patients under 18. Kids take plenty of hits — from falls, from backpacks, from hours hunched over screens. Pediatric adjustments are light-touch and age-appropriate, designed to support healthy development and address issues early before they become bigger ones.",
+      "For patients under 18. Light-contact adjustments for spinal stress from developmental load, posture, and physical activity.",
     icon: "pediatric",
   },
 ] as const;
