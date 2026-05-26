@@ -48,7 +48,7 @@ const localBusinessSchema = {
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "10918 Riverside Dr",
-    "addressLocality": "Toluca Lake",
+    "addressLocality": "North Hollywood",
     "addressRegion": "CA",
     "postalCode": "91602",
     "addressCountry": "US"
@@ -76,8 +76,12 @@ const localBusinessSchema = {
   "currenciesAccepted": "USD",
   "paymentAccepted": "Cash, Credit Card",
   "medicalSpecialty": "Chiropractic",
-  "hasMap": "https://maps.google.com/?q=10918+Riverside+Dr,+Toluca+Lake,+CA+91602",
-  "image": "https://spinebar.com/logo/spinebar-logo.png"
+    "hasMap": "https://maps.google.com/?q=10918+Riverside+Dr,+North+Hollywood,+CA+91602",
+  "image": "https://spinebar.com/logo/spinebar-logo.png",,
+    "sameAs": [
+          "https://www.instagram.com/spinebarchiropractic/",
+          "ADD_GOOGLE_BUSINESS_PROFILE_URL"
+        ]
 };
 
 export default function RootLayout({
