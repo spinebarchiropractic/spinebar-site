@@ -77,7 +77,7 @@ const localBusinessSchema = {
   "paymentAccepted": "Cash, Credit Card",
   "medicalSpecialty": "Chiropractic",
     "hasMap": "https://maps.google.com/?q=10918+Riverside+Dr,+North+Hollywood,+CA+91602",
-  "image": "https://spinebar.com/logo/spinebar-logo.png",,
+  "image": "https://spinebar.com/logo/spinebar-logo.png",
     "sameAs": [
           "https://www.instagram.com/spinebarchiropractic/",
           "ADD_GOOGLE_BUSINESS_PROFILE_URL"
