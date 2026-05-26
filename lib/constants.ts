@@ -28,7 +28,7 @@ export const SERVICES = [
   {
     title: "New Patient Exam & Assessment",
     description:
-      "Health history, postural analysis, orthopedic testing, and hands-on assessment. First treatment same visit.",
+      "Health history, postural analysis, orthopedic testing, and hands-on assessment. Treatment begins same visit.",
     icon: "newPatient",
   },
   {
