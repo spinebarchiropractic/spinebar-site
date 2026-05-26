@@ -1,14 +1,9 @@
 import { ImageResponse } from "next/og";
-import { readFileSync } from "fs";
-import { join } from "path";
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-export default async function Icon() {
-  const logoData = readFileSync(join(process.cwd(), "public/logo/spinebar-logo.png"));
-  const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
-
+export default function Icon() {
   return new ImageResponse(
     <div
       style={{
@@ -18,16 +13,20 @@ export default async function Icon() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        borderRadius: "6px",
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={logoSrc}
-        alt=""
-        width={20}
-        height={30}
-        style={{ objectFit: "contain", filter: "invert(1)" }}
-      />
+      <div
+        style={{
+          color: "#c9a84c",
+          fontSize: 13,
+          fontFamily: "serif",
+          fontWeight: "bold",
+          letterSpacing: "-0.5px",
+        }}
+      >
+        SB
+      </div>
     </div>,
     { ...size }
   );
