@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ServicesSection preview />
+      <ServicesSection />
       <AboutSection preview />
       {/* Testimonials hidden until real patient reviews are collected. */}
       {/* <TestimonialsSection /> */}
