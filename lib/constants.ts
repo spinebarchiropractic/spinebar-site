@@ -5,8 +5,8 @@ export const SITE = {
   location: "Toluca Lake",
   phone: "747-774-7144",
   phoneHref: "tel:7477747144",
-  email: "info@spinebarchiropractic.com",
-  emailHref: "mailto:info@spinebarchiropractic.com",
+  email: "info@spinebar.com",
+  emailHref: "mailto:info@spinebar.com",
   address: ADDRESS,
   mapsUrl: `https://maps.google.com/?q=${encodeURIComponent(ADDRESS)}`,
   mapsEmbedUrl: `https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`,
@@ -14,7 +14,7 @@ export const SITE = {
   bookingUrl: "https://practice.chirotouch.com/portal/spinebarchiropractic",
   tagline: "Care you'll actually look forward to.",
   description:
-    "A solo practice in Toluca Lake where every visit is one-on-one with Dr. Chakrian. Real time, honest answers, and care that actually gets to the root of what's going on.",
+    "A solo chiropractic practice in Toluca Lake. Every visit is one-on-one with Dr. Chakrian — thorough assessment, honest findings, and care that addresses the underlying cause.",
 } as const;
 
 export const NAV_LINKS = [
@@ -111,7 +111,7 @@ export const DOCTOR = {
   headshotAlt: "Dr. Arthur Chakrian, DC — Spine Bar Chiropractic",
   headline: "One-on-one care, built around you.",
   previewIntro:
-    "Spine Bar was built around a simple idea: you deserve a chiropractor who listens, explains what they find, and treats you like an adult. Every visit is one-on-one with Dr. Chakrian — no handoffs, no rushing.",
+    "Spine Bar was built on a straightforward philosophy: thorough assessment, clear communication, and care that’s specific to your presentation. Every visit is one-on-one with Dr. Chakrian — no handoffs, no rushed appointments.",
   bio: [
     "Dr. Arthur Chakrian takes an individualized approach to care, shaped by a genuine understanding of each patient. He places strong emphasis on listening—taking the time to understand not only symptoms, but history, lifestyle, and underlying patterns that influence health. This depth of insight informs how care is delivered, allowing treatment to be both precise and personal. His philosophy centers on supporting the body as an integrated system, with an emphasis on natural function and long-term wellness.",
     "This same philosophy extends beyond the treatment room. Dr. Arthur Chakrian created SupDoc, a doctor-formulated supplement line designed to support whole-body health and maintain balance over time. Each formulation is built with a focus on quality, function, and a practical approach to wellness.",
