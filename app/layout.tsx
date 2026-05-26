@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description: SITE.description,
   openGraph: {
     title: "Spine Bar Chiropractic | Toluca Lake",
-    description: "A solo chiropractic practice in Toluca Lake. One-on-one care with Dr. Arthur Chakrian, DC — real time, honest answers.",
+    description: "A solo chiropractic practice in Toluca Lake. One-on-one care with Dr. Arthur Chakrian, DC — thorough assessment, honest findings, and care that addresses the underlying cause.",
     url: "https://spinebar.com",
     siteName: "Spine Bar Chiropractic",
     type: "website",
@@ -33,9 +33,51 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Spine Bar Chiropractic | Toluca Lake",
-    description: "Modern chiropractic and wellness care in Toluca Lake.",
-
+    description: "A solo chiropractic practice in Toluca Lake. One-on-one care with Dr. Arthur Chakrian, DC.",
   },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["MedicalBusiness", "Chiropractor"],
+  "name": "Spine Bar Chiropractic",
+  "description": "A solo chiropractic practice in Toluca Lake. Every visit is one-on-one with Dr. Arthur Chakrian, DC — thorough assessment, honest findings, and care that addresses the underlying cause.",
+  "url": "https://spinebar.com",
+  "telephone": "+17477747144",
+  "email": "info@spinebar.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10918 Riverside Dr",
+    "addressLocality": "Toluca Lake",
+    "addressRegion": "CA",
+    "postalCode": "91602",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.1573,
+    "longitude": -118.3625
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "13:00"
+    }
+  ],
+  "priceRange": "$$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card",
+  "medicalSpecialty": "Chiropractic",
+  "hasMap": "https://maps.google.com/?q=10918+Riverside+Dr,+Toluca+Lake,+CA+91602",
+  "image": "https://spinebar.com/logo/spinebar-logo.png"
 };
 
 export default function RootLayout({
@@ -49,6 +91,10 @@ export default function RootLayout({
       className={`${cormorant.variable} ${dmSans.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col bg-cream font-sans text-green">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
