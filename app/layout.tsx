@@ -80,7 +80,7 @@ const localBusinessSchema = {
   "image": "https://spinebar.com/logo/spinebar-logo.png",
     "sameAs": [
           "https://www.instagram.com/spinebarchiropractic/",
-          "ADD_GOOGLE_BUSINESS_PROFILE_URL"
+              "https://www.google.com/maps/place/Spine+Bar+Chiropractic/@34.1520198,-118.3713363,17z/data=!3m1!4b1!4m6!3m5!1s0x80c2bf445b1e7905:0xcbc8bdbfdaac5cd1!8m2!3d34.1520198!4d-118.368756!16s%2Fg%2F11z583yprv"
         ]
 };
 
