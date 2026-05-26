@@ -1,9 +1,9 @@
 "use client";
 
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
+import { FadeIn } from "@/components/motion/FadeIn";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { DOCTOR } from "@/lib/constants";
+import { DOCTOR, SITE } from "@/lib/constants";
 
 type AboutSectionProps = {
   preview?: boolean;
@@ -17,7 +17,7 @@ function DoctorHeadshot({ className = "" }: { className?: string }) {
         aria-label={DOCTOR.headshotAlt}
         className="relative flex aspect-[4/5] flex-col items-center justify-center gap-3 overflow-hidden rounded-3xl border border-cream-border bg-cream-dark px-6 text-center"
       >
-        {/* Placeholder slot — add headshot at public/images/dr-arthur-chakrian.jpg */}
+        {/* Placeholder slot — replace with <Image> when headshot is ready */}
         <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gold-light/60 bg-cream">
           <span className="font-serif text-4xl text-gold">AC</span>
         </div>
@@ -31,10 +31,6 @@ function DoctorHeadshot({ className = "" }: { className?: string }) {
 }
 
 export function AboutSection({ preview = false }: AboutSectionProps) {
-  const highlights = preview
-    ? DOCTOR.highlights.slice(0, 2)
-    : DOCTOR.highlights;
-
   if (!preview) {
     return (
       <section
@@ -67,23 +63,17 @@ export function AboutSection({ preview = false }: AboutSectionProps) {
                   </p>
                 ))}
               </FadeIn>
+
+              <FadeIn className="mt-10 flex flex-wrap gap-4" delay={0.15}>
+                <Button href={SITE.bookingUrl} external variant="primary">
+                  Book a Consultation
+                </Button>
+                <Button href="https://mysupdoc.com" external variant="outline">
+                  Explore SupDoc
+                </Button>
+              </FadeIn>
             </div>
           </div>
-
-          <StaggerContainer className="mt-20 grid gap-6 md:grid-cols-3">
-            {DOCTOR.highlights.map((item) => (
-              <StaggerItem key={item.title}>
-                <div className="h-full rounded-2xl border border-cream-border bg-cream p-6 lg:p-8">
-                  <h3 className="font-serif text-xl text-green lg:text-2xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-relaxed text-green-muted">
-                    {item.description}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </div>
       </section>
     );
@@ -95,7 +85,7 @@ export function AboutSection({ preview = false }: AboutSectionProps) {
       className="border-t border-cream-border bg-cream-dark py-24 lg:py-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
+        <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <FadeIn>
             <SectionHeading
               label="About"
@@ -109,20 +99,9 @@ export function AboutSection({ preview = false }: AboutSectionProps) {
             </div>
           </FadeIn>
 
-          <StaggerContainer className="grid gap-6">
-            {highlights.map((item) => (
-              <StaggerItem key={item.title}>
-                <div className="rounded-2xl border border-cream-border bg-cream p-6 lg:p-8">
-                  <h3 className="font-serif text-xl text-green lg:text-2xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-relaxed text-green-muted">
-                    {item.description}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+          <FadeIn delay={0.1} direction="left">
+            <DoctorHeadshot className="max-w-sm mx-auto lg:mx-0" />
+          </FadeIn>
         </div>
       </div>
     </section>
