@@ -1,7 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram } from "lucide-react";
 import { SITE, NAV_LINKS } from "@/lib/constants";
+
+function InstagramIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -36,7 +55,7 @@ export function Footer() {
               aria-label="Spine Bar on Instagram"
               className="mt-5 inline-flex items-center gap-2 text-sm text-cream/60 transition-colors hover:text-cream"
             >
-              <Instagram size={16} strokeWidth={1.5} />
+              <InstagramIcon size={16} />
               {SITE.instagramHandle}
             </a>
           </div>
@@ -73,18 +92,12 @@ export function Footer() {
             </p>
             <ul className="space-y-3 text-sm text-cream/70">
               <li>
-                <a
-                  href={SITE.phoneHref}
-                  className="transition-colors hover:text-cream"
-                >
+                <a href={SITE.phoneHref} className="transition-colors hover:text-cream">
                   {SITE.phone}
                 </a>
               </li>
               <li>
-                <a
-                  href={SITE.emailHref}
-                  className="transition-colors hover:text-cream"
-                >
+                <a href={SITE.emailHref} className="transition-colors hover:text-cream">
                   {SITE.email}
                 </a>
               </li>
