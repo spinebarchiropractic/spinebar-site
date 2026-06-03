@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { CONDITIONS, SITE } from "@/lib/constants";
@@ -21,29 +22,34 @@ export function ConditionsSection() {
         <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CONDITIONS.map((condition) => (
             <StaggerItem key={condition.slug}>
-              <article className="group flex h-full flex-col rounded-2xl border border-cream-border bg-cream p-8 transition-all duration-300 hover:border-gold/40 hover:bg-cream-dark hover:shadow-sm">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-green/[0.08] text-gold">
-                  <span className="font-serif text-xl">{condition.icon}</span>
-                </div>
-                <h2 className="mb-3 font-serif text-2xl leading-snug text-green">
-                  {condition.title}
-                </h2>
-                <p className="flex-1 text-sm leading-relaxed text-green-muted">
-                  {condition.description}
-                </p>
-                {condition.tags && (
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {condition.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-cream-border px-3 py-1 text-xs text-green-muted"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+              <Link href={`/conditions/${condition.slug}`} className="group block h-full">
+                <article className="flex h-full flex-col rounded-2xl border border-cream-border bg-cream p-8 transition-all duration-300 hover:border-gold/40 hover:bg-cream-dark hover:shadow-sm">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-green/[0.08] text-gold">
+                    <span className="font-serif text-xl">{condition.icon}</span>
                   </div>
-                )}
-              </article>
+                  <h2 className="mb-3 font-serif text-2xl leading-snug text-green group-hover:text-green-dark">
+                    {condition.title}
+                  </h2>
+                  <p className="flex-1 text-sm leading-relaxed text-green-muted">
+                    {condition.description}
+                  </p>
+                  {condition.tags && (
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {condition.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-cream-border px-3 py-1 text-xs text-green-muted"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <p className="mt-5 text-xs font-medium text-gold transition-colors group-hover:text-green">
+                    Learn more →
+                  </p>
+                </article>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>

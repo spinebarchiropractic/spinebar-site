@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Instagram } from "lucide-react";
 import { SITE, NAV_LINKS } from "@/lib/constants";
 
 export function Footer() {
@@ -28,6 +29,16 @@ export function Footer() {
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/70">
               {SITE.description}
             </p>
+            <a
+              href={SITE.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Spine Bar on Instagram"
+              className="mt-5 inline-flex items-center gap-2 text-sm text-cream/60 transition-colors hover:text-cream"
+            >
+              <Instagram size={16} strokeWidth={1.5} />
+              {SITE.instagramHandle}
+            </a>
           </div>
 
           <div>
@@ -47,10 +58,10 @@ export function Footer() {
               ))}
               <li>
                 <Link
-                  href="/services"
+                  href="/blog"
                   className="text-sm text-cream/70 transition-colors hover:text-cream"
                 >
-                  All Services
+                  Blog
                 </Link>
               </li>
             </ul>
@@ -78,7 +89,7 @@ export function Footer() {
                 </a>
               </li>
               <li>{SITE.address}</li>
-              <li>{SITE.hours}</li>
+              <li>Mon–Fri 9am–5pm · Sat 9am–1pm</li>
             </ul>
           </div>
         </div>

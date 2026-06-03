@@ -28,7 +28,7 @@ const contactItems = [
   {
     icon: Clock,
     label: "Hours",
-    value: SITE.hours,
+    value: "Mon–Fri 9am–5pm · Sat 9am–1pm",
   },
 ] as const;
 
@@ -87,37 +87,39 @@ export function ContactSection() {
           </StaggerContainer>
         </div>
 
-        {/* Directions card — replaces broken map embed */}
+        {/* Map embed */}
         <FadeIn className="mt-16">
-          <a
-            href={SITE.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-3xl border border-cream-border bg-cream-dark transition-all duration-300 hover:border-gold-light hover:shadow-[0_8px_30px_-12px_rgba(157,135,83,0.2)]"
-          >
-            <div className="flex items-center justify-between p-8 lg:p-10">
+          <div className="overflow-hidden rounded-3xl border border-cream-border">
+            <iframe
+              title="Spine Bar Chiropractic location map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.3!2d-118.368756!3d34.1520198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf445b1e7905%3A0xcbc8bdbfdaac5cd1!2sSpine%20Bar%20Chiropractic!5e0!3m2!1sen!2sus!4v1"
+              width="100%"
+              height="360"
+              style={{ border: 0, display: "block" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="flex items-center justify-between border-t border-cream-border bg-cream-dark px-8 py-5">
               <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-gold">
-                  Find Us
-                </p>
-                <p className="mt-2 font-serif text-2xl text-green lg:text-3xl">
-                  {SITE.address}
-                </p>
-                <p className="mt-1 text-sm text-green-muted">
+                <p className="font-serif text-lg text-green">{SITE.address}</p>
+                <p className="mt-0.5 text-sm text-green-muted">
                   Free street parking available on Riverside Dr
                 </p>
               </div>
-              <div className="ml-6 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-cream-border bg-cream text-gold transition-all duration-300 group-hover:border-green group-hover:bg-green group-hover:text-cream">
-                <ExternalLink size={18} strokeWidth={1.5} />
-              </div>
+              <a
+                href={SITE.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-6 flex flex-shrink-0 items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-green"
+              >
+                Open in Maps
+                <ExternalLink size={14} strokeWidth={1.5} />
+              </a>
             </div>
-            <div className="border-t border-cream-border px-8 py-4 lg:px-10">
-              <span className="text-sm font-medium text-gold transition-colors duration-300 group-hover:text-green">
-                Open in Google Maps →
-              </span>
-            </div>
-          </a>
+          </div>
         </FadeIn>
+
       </div>
     </section>
   );

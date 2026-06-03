@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SITE, NAV_LINKS, DOCTOR } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
@@ -52,7 +52,7 @@ export function Navbar() {
           </div>
         </Link>
 
-        <div className="hidden items-center gap-10 lg:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -62,6 +62,15 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <a
+            href={SITE.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Spine Bar on Instagram"
+            className="text-green-muted transition-colors duration-300 hover:text-green"
+          >
+            <Instagram size={18} strokeWidth={1.5} />
+          </a>
           <Button href={SITE.bookingUrl} external variant="primary" className="!px-6 !py-3">
             Book Appointment
           </Button>
@@ -111,6 +120,23 @@ export function Navbar() {
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: -16 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+              >
+                <a
+                  href={SITE.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-3 rounded-xl px-4 py-3 text-base font-medium text-green transition-colors hover:bg-cream-dark"
+                >
+                  <Instagram size={16} strokeWidth={1.5} />
+                  Instagram
+                </a>
+              </motion.div>
               <motion.div
                 variants={{
                   hidden: { opacity: 0, x: -16 },
