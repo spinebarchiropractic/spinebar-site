@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { DOCTOR } from "@/lib/constants";
-// Testimonials hidden until real patient reviews are collected.
-// import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { ReviewsSection } from "@/components/sections/ReviewsSection";
 import { BookingCTA } from "@/components/sections/BookingCTA";
+import { DOCTOR } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About",
@@ -20,8 +19,7 @@ export default function AboutPage() {
         description={DOCTOR.practice}
       />
       <AboutSection />
-      {/* Testimonials hidden until real patient reviews are collected. */}
-      {/* <TestimonialsSection /> */}
+      <ReviewsSection />
       <BookingCTA />
     </>
   );

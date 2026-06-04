@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { CONDITIONS, BLOG_POSTS } from "@/lib/constants";
 
+const ALL_CATEGORIES = Array.from(new Set(BLOG_POSTS.map((p) => p.category)));
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://spinebar.com";
   const now = new Date();
@@ -28,5 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...conditionRoutes, ...blogRoutes];
+  const categoryRoutes: MetadataRoute.Sitemap = ALL_CATEGORIES.map((cat) => ({
+    url: `${base}/blog/category/${cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  }));
+
+  return [...staticRoutes, ...conditionRoutes, ...blogRoutes, ...categoryRoutes];
 }

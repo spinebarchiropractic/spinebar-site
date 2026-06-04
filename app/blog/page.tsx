@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "Clinical insights, patient education, and honest information from Dr. Arthur Chakrian, DC — Spine Bar Chiropractic in Toluca Lake.",
 };
 
+const ALL_CATEGORIES = Array.from(new Set(BLOG_POSTS.map((p) => p.category)));
+
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-US", {
     year: "numeric",
@@ -35,15 +37,41 @@ export default function BlogPage() {
 
       <section className="bg-cream py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
+
+          {/* Category filter */}
+          <FadeIn>
+            <div className="mb-12 flex flex-wrap gap-2">
+              <span className="rounded-full border border-green bg-green px-4 py-2 text-xs uppercase tracking-[0.2em] text-cream">
+                All
+              </span>
+              {ALL_CATEGORIES.map((cat) => {
+                const slug = cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
+                return (
+                  <Link
+                    key={cat}
+                    href={`/blog/category/${slug}`}
+                    className="rounded-full border border-cream-border bg-cream-dark px-4 py-2 text-xs uppercase tracking-[0.2em] text-green-muted transition-colors hover:border-gold/40 hover:text-green"
+                  >
+                    {cat}
+                  </Link>
+                );
+              })}
+            </div>
+          </FadeIn>
+
           <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <StaggerItem key={post.slug}>
                 <Link href={`/blog/${post.slug}`} className="group block h-full">
                   <article className="flex h-full flex-col rounded-2xl border border-cream-border bg-cream p-8 transition-all duration-300 hover:border-gold/40 hover:bg-cream-dark hover:shadow-sm">
                     <div className="mb-5 flex items-center gap-3">
-                      <span className="rounded-full border border-cream-border px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold">
+                      <Link
+                        href={`/blog/category/${post.category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")}`}
+                        className="rounded-full border border-cream-border px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold transition-colors hover:border-gold/60"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         {post.category}
-                      </span>
+                      </Link>
                       <span className="text-xs text-green-muted">{post.readTime}</span>
                     </div>
                     <h2 className="mb-3 font-serif text-2xl leading-snug text-green group-hover:text-green-dark">
@@ -74,7 +102,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Newsletter / CTA */}
       <section className="border-t border-cream-border bg-cream-dark py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <FadeIn>

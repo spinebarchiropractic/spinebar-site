@@ -571,7 +571,259 @@ export const BLOG_POSTS = [
       },
     ],
   },
+  {
+    slug: "sciatica-vs-piriformis-syndrome-how-to-tell-the-difference",
+    title: "Sciatica vs. Piriformis Syndrome: How to Tell the Difference",
+    date: "2026-06-05",
+    author: "Dr. Arthur Chakrian, DC",
+    category: "Nerve & Radiculopathy",
+    excerpt:
+      "Both produce pain down the leg. But the source \u2014 and the treatment \u2014 are completely different. Treating one when you have the other doesn\u2019t work.",
+    readTime: "5 min read",
+    body: [
+      {
+        type: "paragraph",
+        content:
+          "The term \u201csciatica\u201d gets used loosely \u2014 often to describe any pain that travels from the lower back or buttock down the leg. But sciatica is a symptom, not a diagnosis. It tells you the sciatic nerve is being irritated somewhere along its path. It tells you nothing about where.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "The two most common sources are lumbar disc herniation \u2014 where the nerve root is compressed at the spine \u2014 and piriformis syndrome, where the sciatic nerve is compressed or irritated by the piriformis muscle deep in the gluteal region. These two conditions produce similar symptoms. They require different treatment. And confusing them is one of the most common reasons patients don\u2019t get better.",
+      },
+      {
+        type: "heading",
+        content: "Where the pain comes from matters",
+      },
+      {
+        type: "paragraph",
+        content:
+          "In lumbar disc herniation, the compression happens at the nerve root \u2014 typically L4\u2013L5 or L5\u2013S1. The pain usually starts in the lower back, radiates through the buttock, and travels down the back of the leg, sometimes into the calf or foot. It\u2019s often worsened by sitting, forward bending, or anything that increases intradiscal pressure. Coughing or sneezing can reproduce it sharply.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "In piriformis syndrome, there is no disc involvement. The sciatic nerve exits the pelvis near or through the piriformis muscle. When that muscle is tight, hypertrophied, or in spasm, it compresses the nerve from the outside. The pain is typically deeper in the buttock, may radiate down the leg, but usually doesn\u2019t involve the lower back the same way. It\u2019s often worse after prolonged sitting, hip external rotation, or direct pressure on the piriformis.",
+      },
+      {
+        type: "heading",
+        content: "How we tell them apart",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Clinical testing differentiates them. The straight leg raise test (SLR) is positive in lumbar nerve root compression \u2014 elevating the leg reproduces the radiating pain by tensioning the nerve root. The FAIR test (hip flexion, adduction, and internal rotation) is specific for piriformis syndrome \u2014 it stretches the piriformis across the sciatic nerve and reproduces the buttock and leg pain if that\u2019s the source.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Palpation of the piriformis \u2014 deep in the gluteal region \u2014 will often reproduce symptoms directly in piriformis syndrome. The lower back exam is typically unremarkable. In lumbar disc cases, motion palpation of the lumbar spine and segmental provocation will reproduce or worsen symptoms.",
+      },
+      {
+        type: "heading",
+        content: "Why it matters for treatment",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Lumbar disc cases are treated with decompressive lumbar adjustment, McKenzie-style positioning, and management of the disc pressure mechanics. Piriformis cases are treated with direct soft tissue work to the piriformis and hip external rotators, combined with sacroiliac and lumbopelvic adjustment to address the mechanical loading that\u2019s driving the piriformis tension.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "If you\u2019ve been told you have sciatica and you\u2019re not getting better, it\u2019s worth asking whether the source has actually been confirmed \u2014 or assumed. A thorough clinical assessment takes about 15 minutes and gives you a clear answer.",
+      },
+    ],
+  },
+  {
+    slug: "what-chiropractic-care-actually-is-and-isnt",
+    title: "What Chiropractic Care Actually Is \u2014 And Isn\u2019t",
+    date: "2026-06-12",
+    author: "Dr. Arthur Chakrian, DC",
+    category: "Education",
+    excerpt:
+      "Most people have a vague idea of what chiropractors do. Some of it\u2019s accurate. A lot of it isn\u2019t. Here\u2019s a straight answer.",
+    readTime: "5 min read",
+    body: [
+      {
+        type: "paragraph",
+        content:
+          "Chiropractic care has a perception problem. To some people it\u2019s miracle medicine that treats everything from back pain to allergies. To others it\u2019s pseudoscience performed by people who crack bones. Neither of those is accurate, and both get in the way of patients making good decisions about their health.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Here\u2019s what chiropractic care actually is: a clinical discipline focused on the diagnosis and treatment of musculoskeletal disorders \u2014 primarily those involving the spine \u2014 through manual therapy. The core intervention is spinal manipulation (adjustment): a specific, controlled force applied to a restricted joint to restore its normal range of motion.",
+      },
+      {
+        type: "heading",
+        content: "What the evidence actually supports",
+      },
+      {
+        type: "paragraph",
+        content:
+          "The research base for chiropractic care is strongest for spinal pain \u2014 specifically acute and chronic low back pain, neck pain, and cervicogenic headaches. Multiple systematic reviews and clinical guidelines, including those from the American College of Physicians, recommend spinal manipulation as a first-line treatment for acute low back pain before pharmacological intervention.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "The evidence is also solid for whiplash-associated disorder, thoracic spine pain, sacroiliac joint dysfunction, and several extremity conditions. For non-musculoskeletal conditions \u2014 internal organ disorders, immune function, pediatric colic \u2014 the evidence is weak to nonexistent. A chiropractor who claims to treat asthma or infertility through spinal adjustment is not practicing evidence-based care.",
+      },
+      {
+        type: "heading",
+        content: "What an adjustment actually does",
+      },
+      {
+        type: "paragraph",
+        content:
+          "A chiropractic adjustment restores normal arthrokinematic motion to a restricted spinal segment. It does this through a high-velocity, low-amplitude thrust that moves the joint through its paraphysiologic range. The mechanical effect is joint mobilization. The neurological effect is inhibition of pain signaling through mechanoreceptor stimulation. Neither of these requires any belief in vitalism, subluxation theory, or chiropractic philosophy.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "At Spine Bar, care is grounded in clinical orthopedics and manual therapy \u2014 not philosophy. We assess, we find what\u2019s restricted or dysfunctional, we treat it, and we track whether it\u2019s working. If it\u2019s not working, we say so.",
+      },
+      {
+        type: "heading",
+        content: "What it isn\u2019t",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Chiropractic care is not a substitute for medical care when medical care is indicated. It\u2019s not appropriate for fractures, serious infection, malignancy, or conditions requiring surgical intervention. Part of clinical competence is knowing when to refer \u2014 and doing it without hesitation.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "It\u2019s also not a lifetime commitment. Many patients benefit from a defined course of care, resolve their presenting problem, and are discharged. Some choose to come in periodically for maintenance. Neither outcome requires perpetual treatment.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-know-if-your-back-pain-needs-imaging",
+    title: "How to Know If Your Back Pain Needs Imaging",
+    date: "2026-06-19",
+    author: "Dr. Arthur Chakrian, DC",
+    category: "Lower Back",
+    excerpt:
+      "Most back pain does not need an X-ray or MRI. But some does. Here\u2019s how clinicians decide \u2014 and what imaging actually tells you.",
+    readTime: "4 min read",
+    body: [
+      {
+        type: "paragraph",
+        content:
+          "One of the most common questions patients ask when they come in with back pain is whether they need an X-ray or MRI. The honest answer is: most of the time, no. Imaging for acute low back pain is frequently ordered, frequently unhelpful, and sometimes actively misleading.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Studies consistently show that structural findings on spinal imaging \u2014 disc bulges, degenerative changes, mild foraminal narrowing \u2014 are present in large percentages of people with no pain at all. A 2015 systematic review found that disc degeneration is present in 37% of asymptomatic 20-year-olds and over 90% of 60-year-olds. These are not pathological findings. They are normal age-related changes. Imaging them doesn\u2019t change that.",
+      },
+      {
+        type: "heading",
+        content: "When imaging is not indicated",
+      },
+      {
+        type: "paragraph",
+        content:
+          "For most acute and subacute low back pain without red flags, imaging is not clinically indicated in the first four to six weeks. This is the consensus position of virtually every major clinical guideline \u2014 including those from the American College of Physicians, the AMA, and the Choosing Wisely initiative. Early imaging in uncomplicated back pain increases cost, increases radiation exposure, and frequently leads to unnecessary intervention on incidental findings.",
+      },
+      {
+        type: "heading",
+        content: "When imaging is indicated",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Red flags change the calculus. These include: significant trauma (fall from height, motor vehicle accident), suspicion of fracture, history of osteoporosis, unexplained weight loss, fever or signs of infection, history of cancer, bowel or bladder dysfunction, progressive neurological deficit, or pain that is constant, severe, and unrelenting regardless of position.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Radiculopathy \u2014 nerve root pain with associated neurological signs \u2014 is also an indication for imaging if conservative care is not producing improvement, or if surgical consultation is being considered. The decision is based on the clinical picture, not the pain level alone.",
+      },
+      {
+        type: "heading",
+        content: "What imaging tells you \u2014 and doesn\u2019t",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Imaging shows structure. It does not show function. A normal MRI does not mean nothing is wrong \u2014 joint restriction, muscle dysfunction, and movement pattern problems don\u2019t show up on imaging. An abnormal MRI doesn\u2019t mean surgery is necessary, or even that the finding is responsible for the pain.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "When we see patients with existing imaging, we review it as one input among many \u2014 alongside the clinical exam, history, and functional assessment. If you don\u2019t have imaging and don\u2019t meet criteria for it, we\u2019ll tell you that directly. If you do meet criteria, we\u2019ll refer you for it before proceeding.",
+      },
+    ],
+  },
+  {
+    slug: "the-difference-between-a-chiropractor-and-a-physical-therapist",
+    title: "The Difference Between a Chiropractor and a Physical Therapist",
+    date: "2026-06-26",
+    author: "Dr. Arthur Chakrian, DC",
+    category: "Education",
+    excerpt:
+      "Patients often ask which they should see. The honest answer depends on what\u2019s actually wrong \u2014 and both have a role.",
+    readTime: "4 min read",
+    body: [
+      {
+        type: "paragraph",
+        content:
+          "This is one of the most common questions patients ask \u2014 either before their first visit or after being told by a physician to \u201csee a PT or a chiro.\u201d The two professions overlap significantly, have distinct areas of strength, and are often complementary rather than competing. Understanding the difference helps you make a better decision.",
+      },
+      {
+        type: "heading",
+        content: "Where they overlap",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Both chiropractors and physical therapists treat musculoskeletal conditions \u2014 pain, dysfunction, and movement problems involving the spine and extremities. Both use manual therapy techniques, including joint mobilization and soft tissue work. Both assess movement and function. Both are doctoral-level clinicians. For many common presentations \u2014 low back pain, neck pain, shoulder dysfunction \u2014 either can be an appropriate first stop.",
+      },
+      {
+        type: "heading",
+        content: "Where they differ",
+      },
+      {
+        type: "paragraph",
+        content:
+          "The primary distinction is in emphasis and approach. Chiropractic training is heavily focused on spinal biomechanics, joint manipulation, and the relationship between spinal function and the nervous system. The chiropractic adjustment \u2014 high-velocity manipulation \u2014 is a central tool. Chiropractors also tend to place higher emphasis on full-spine assessment and treating the whole kinetic chain rather than isolating a single structure.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Physical therapy training emphasizes rehabilitative exercise, functional movement retraining, and progressive loading. PTs excel at post-surgical rehabilitation, complex movement dysfunction, and cases where the primary intervention is exercise-based. Many PTs also perform joint manipulation \u2014 but it\u2019s one tool among many rather than a central focus.",
+      },
+      {
+        type: "heading",
+        content: "Which to choose",
+      },
+      {
+        type: "paragraph",
+        content:
+          "If your pain is primarily mechanical \u2014 joint restriction, spinal dysfunction, referred pain from a fixated segment \u2014 chiropractic care is likely the more direct path. If your presentation is primarily weakness, post-surgical, or requires significant movement retraining, physical therapy is the stronger fit. Many patients benefit from both, sequentially or concurrently.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "At Spine Bar, we don\u2019t operate in silos. If your presentation calls for referral to PT \u2014 or to any other provider \u2014 we\u2019ll make that recommendation directly. The goal is that you get better, not that you stay in our office.",
+      },
+    ],
+  },
 ] as const;
 
 export type BlogPost = (typeof BLOG_POSTS)[number];
 export type Condition = (typeof CONDITIONS)[number];
+
+export const REVIEWS: {
+  name: string;
+  rating: number;
+  date: string;
+  body: string;
+  condition?: string;
+}[] = [
+  // Paste reviews here as they come in — format:
+  // { name: "First Name L.", rating: 5, date: "2026-06-01", body: "...", condition: "Lower Back Pain" },
+];
