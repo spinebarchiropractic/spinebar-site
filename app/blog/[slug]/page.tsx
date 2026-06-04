@@ -38,6 +38,16 @@ export default async function BlogPostPage({ params }: Props) {
 
   const related = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 2);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://spinebar.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://spinebar.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://spinebar.com/blog/${post.slug}` },
+    ],
+  };
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -65,6 +75,10 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}

@@ -4,38 +4,22 @@ import { MapPin, Phone, Clock, Mail, ExternalLink } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { ContactForm } from "@/components/sections/ContactForm";
 import { SITE } from "@/lib/constants";
 
 const contactItems = [
-  {
-    icon: MapPin,
-    label: "Location",
-    value: SITE.address,
-    href: SITE.mapsUrl,
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: SITE.phone,
-    href: SITE.phoneHref,
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: SITE.email,
-    href: SITE.emailHref,
-  },
-  {
-    icon: Clock,
-    label: "Hours",
-    value: "Mon–Fri 9am–5pm · Sat 9am–1pm",
-  },
+  { icon: MapPin, label: "Location", value: SITE.address, href: SITE.mapsUrl },
+  { icon: Phone, label: "Phone", value: SITE.phone, href: SITE.phoneHref },
+  { icon: Mail, label: "Email", value: SITE.email, href: SITE.emailHref },
+  { icon: Clock, label: "Hours", value: "Mon–Fri 9am–5pm · Sat 9am–1pm" },
 ] as const;
 
 export function ContactSection() {
   return (
     <section id="contact" className="border-t border-cream-border bg-cream py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
+
+        {/* Top: heading + contact cards */}
         <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
           <FadeIn>
             <SectionHeading
@@ -58,15 +42,10 @@ export function ContactSection() {
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-green/5 text-gold">
                     <Icon size={18} strokeWidth={1.5} />
                   </div>
-                  <p className="text-xs uppercase tracking-[0.25em] text-gold">
-                    {item.label}
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-green">
-                    {item.value}
-                  </p>
+                  <p className="text-xs uppercase tracking-[0.25em] text-gold">{item.label}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-green">{item.value}</p>
                 </div>
               );
-
               return (
                 <StaggerItem key={item.label}>
                   {"href" in item && item.href ? (
@@ -78,16 +57,33 @@ export function ContactSection() {
                     >
                       {content}
                     </a>
-                  ) : (
-                    content
-                  )}
+                  ) : content}
                 </StaggerItem>
               );
             })}
           </StaggerContainer>
         </div>
 
-        {/* Map embed */}
+        {/* Contact form */}
+        <div className="mt-20 grid gap-12 lg:grid-cols-2 lg:items-start">
+          <FadeIn>
+            <div>
+              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gold">Send a Message</p>
+              <h2 className="mb-3 font-serif text-3xl leading-tight text-green md:text-4xl">
+                Have a question before booking?
+              </h2>
+              <p className="text-base leading-relaxed text-green-muted">
+                Ask us anything — about your condition, what to expect, insurance, or anything else.
+                We respond within one business day.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <ContactForm />
+          </FadeIn>
+        </div>
+
+        {/* Map */}
         <FadeIn className="mt-16">
           <div className="overflow-hidden rounded-3xl border border-cream-border">
             <iframe
@@ -103,9 +99,7 @@ export function ContactSection() {
             <div className="flex items-center justify-between border-t border-cream-border bg-cream-dark px-8 py-5">
               <div>
                 <p className="font-serif text-lg text-green">{SITE.address}</p>
-                <p className="mt-0.5 text-sm text-green-muted">
-                  Free street parking available on Riverside Dr
-                </p>
+                <p className="mt-0.5 text-sm text-green-muted">Free street parking available on Riverside Dr</p>
               </div>
               <a
                 href={SITE.mapsUrl}

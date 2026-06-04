@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Clinical insights, patient education, and honest information from Dr. Arthur Chakrian, DC — Spine Bar Chiropractic in Toluca Lake.",
+  alternates: { canonical: "https://spinebar.com/blog" },
 };
 
 const ALL_CATEGORIES = Array.from(new Set(BLOG_POSTS.map((p) => p.category)));

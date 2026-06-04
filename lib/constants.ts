@@ -381,6 +381,36 @@ export const FAQ_ITEMS = [
     answer:
       "No referral needed. Book directly through our online portal, call us, or just show up when we have availability. We welcome new patients.",
   },
+  {
+    question: "What is a chiropractic adjustment?",
+    answer:
+      "A chiropractic adjustment is a precise, controlled force applied to a restricted spinal joint to restore its normal range of motion. The \u201cpop\u201d you sometimes hear is a gas release inside the joint capsule \u2014 it\u2019s incidental, not the goal. The goal is restoring mobility and reducing the nerve interference and muscle guarding that builds up around a restricted segment.",
+  },
+  {
+    question: "Will it hurt?",
+    answer:
+      "Most patients feel relief, not pain, during an adjustment. Some experience mild soreness for 24\u201348 hours after their first few visits \u2014 similar to how muscles feel after a workout. We always adapt technique to your comfort level and health history. Nothing is forced.",
+  },
+  {
+    question: "Can chiropractic care help with my specific condition?",
+    answer:
+      "The best way to find out is a proper assessment. We treat a wide range of spinal and musculoskeletal conditions \u2014 lower back pain, neck pain, sciatica, headaches, disc injuries, shoulder pain, and more. If your condition is outside the scope of chiropractic care, we\u2019ll tell you directly and refer you appropriately.",
+  },
+  {
+    question: "Do you treat auto accident injuries?",
+    answer:
+      "Yes. We treat auto accident injuries on a personal injury lien basis \u2014 meaning no out-of-pocket cost to you while your case is pending. We document thoroughly, communicate with your attorney\u2019s office directly, and focus on getting you better as quickly as possible. Call us as soon as possible after your accident \u2014 early treatment leads to better outcomes.",
+  },
+  {
+    question: "What should I wear to my appointment?",
+    answer:
+      "Wear relaxed, comfortable clothing you can move in \u2014 athletic wear, shorts, or anything loose-fitting. We need access to your spine for assessment and treatment. Tight jeans or restrictive clothing makes this harder.",
+  },
+  {
+    question: "How do I book an appointment?",
+    answer:
+      "You can book online 24/7 through our booking portal \u2014 it takes about two minutes. You can also call us at 747-774-7144 during office hours, or send a message through our contact form. No referral required.",
+  },
 ] as const;
 
 export const TESTIMONIALS = [] as const;

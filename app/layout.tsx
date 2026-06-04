@@ -21,6 +21,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://spinebar.com"),
   title: {
     default: `${SITE.name} | ${SITE.location}`,
     template: `%s | ${SITE.name}`,
@@ -33,12 +34,17 @@ export const metadata: Metadata = {
     url: "https://spinebar.com",
     siteName: "Spine Bar Chiropractic",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Spine Bar Chiropractic" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Spine Bar Chiropractic | Toluca Lake",
     description:
       "A solo chiropractic practice in Toluca Lake. One-on-one care with Dr. Arthur Chakrian, DC.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://spinebar.com",
   },
 };
 
@@ -82,8 +88,7 @@ const localBusinessSchema = {
   currenciesAccepted: "USD",
   paymentAccepted: "Cash, Credit Card",
   medicalSpecialty: "Chiropractic",
-  hasMap:
-    "https://maps.google.com/?q=10918+Riverside+Dr,+North+Hollywood,+CA+91602",
+  hasMap: "https://maps.google.com/?q=10918+Riverside+Dr,+North+Hollywood,+CA+91602",
   image: "https://spinebar.com/logo/spinebar-logo.png",
   sameAs: [
     "https://www.instagram.com/spinebarchiropractic/",
@@ -102,7 +107,6 @@ export default function RootLayout({
       className={`${cormorant.variable} ${dmSans.variable} h-full scroll-smooth antialiased`}
     >
       <head>
-        {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"

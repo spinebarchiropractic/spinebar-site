@@ -31,6 +31,16 @@ export default async function ConditionPage({ params }: Props) {
 
   const otherConditions = CONDITIONS.filter((c) => c.slug !== slug).slice(0, 4);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://spinebar.com" },
+      { "@type": "ListItem", "position": 2, "name": "Conditions", "item": "https://spinebar.com/conditions" },
+      { "@type": "ListItem", "position": 3, "name": condition.title, "item": `https://spinebar.com/conditions/${condition.slug}` },
+    ],
+  };
+
   const conditionSchema = {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
@@ -58,6 +68,10 @@ export default async function ConditionPage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(conditionSchema) }}
