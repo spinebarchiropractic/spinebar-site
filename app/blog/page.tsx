@@ -65,13 +65,9 @@ export default function BlogPage() {
                 <Link href={`/blog/${post.slug}`} className="group block h-full">
                   <article className="flex h-full flex-col rounded-2xl border border-cream-border bg-cream p-8 transition-all duration-300 hover:border-gold/40 hover:bg-cream-dark hover:shadow-sm">
                     <div className="mb-5 flex items-center gap-3">
-                      <Link
-                        href={`/blog/category/${post.category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")}`}
-                        className="rounded-full border border-cream-border px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold transition-colors hover:border-gold/60"
-                        onClick={(e) => e.stopPropagation()}
-                      >
+                      <span className="rounded-full border border-cream-border px-3 py-1 text-xs uppercase tracking-[0.2em] text-gold">
                         {post.category}
-                      </Link>
+                      </span>
                       <span className="text-xs text-green-muted">{post.readTime}</span>
                     </div>
                     <h2 className="mb-3 font-serif text-2xl leading-snug text-green group-hover:text-green-dark">
