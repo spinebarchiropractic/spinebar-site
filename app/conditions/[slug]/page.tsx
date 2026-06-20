@@ -35,9 +35,9 @@ export default async function ConditionPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://spinebar.com" },
-      { "@type": "ListItem", "position": 2, "name": "Conditions", "item": "https://spinebar.com/conditions" },
-      { "@type": "ListItem", "position": 3, "name": condition.title, "item": `https://spinebar.com/conditions/${condition.slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.spinebar.com" },
+      { "@type": "ListItem", "position": 2, "name": "Conditions", "item": "https://www.spinebar.com/conditions" },
+      { "@type": "ListItem", "position": 3, "name": condition.title, "item": `https://www.spinebar.com/conditions/${condition.slug}` },
     ],
   };
 
@@ -52,7 +52,7 @@ export default async function ConditionPage({ params }: Props) {
       "provider": {
         "@type": "Chiropractor",
         "name": "Spine Bar Chiropractic",
-        "url": "https://spinebar.com",
+                "url": "https://www.spinebar.com",
         "telephone": "+17477747144",
         "address": {
           "@type": "PostalAddress",
