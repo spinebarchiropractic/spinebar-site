@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://spinebar.com"),
+  metadataBase: new URL("https://www.spinebar.com"),
   title: {
     default: `${SITE.name} | ${SITE.location}`,
     template: `%s | ${SITE.name}`,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Spine Bar Chiropractic | Toluca Lake",
     description:
       "A solo chiropractic practice in Toluca Lake. One-on-one care with Dr. Arthur Chakrian, DC \u2014 thorough assessment, honest findings, and care that addresses the underlying cause.",
-    url: "https://spinebar.com",
+    url: "https://www.spinebar.com",
     siteName: "Spine Bar Chiropractic",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Spine Bar Chiropractic" }],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://spinebar.com",
+    canonical: "https://www.spinebar.com",
   },
 };
 
@@ -54,7 +54,7 @@ const localBusinessSchema = {
   name: "Spine Bar Chiropractic",
   description:
     "A solo chiropractic practice in Toluca Lake. Every visit is one-on-one with Dr. Arthur Chakrian, DC \u2014 thorough assessment, honest findings, and care that addresses the underlying cause.",
-  url: "https://spinebar.com",
+  url: "https://www.spinebar.com",
   telephone: "+17477747144",
   email: "info@spinebar.com",
   address: {
@@ -89,7 +89,7 @@ const localBusinessSchema = {
   paymentAccepted: "Cash, Credit Card",
   medicalSpecialty: "Chiropractic",
   hasMap: "https://maps.google.com/?q=10918+Riverside+Dr,+North+Hollywood,+CA+91602",
-  image: "https://spinebar.com/logo/spinebar-logo.png",
+  image: "https://www.spinebar.com/logo/spinebar-logo.png",
   sameAs: [
     "https://www.instagram.com/spinebarchiropractic/",
     "https://www.google.com/maps/place/Spine+Bar+Chiropractic/@34.1520198,-118.3713363,17z/data=!3m1!4b1!4m6!3m5!1s0x80c2bf445b1e7905:0xcbc8bdbfdaac5cd1!8m2!3d34.1520198!4d-118.368756!16s%2Fg%2F11z583yprv",
