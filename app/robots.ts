@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://spinebar.com/sitemap.xml",
+    sitemap: "https://www.spinebar.com/sitemap.xml",
   };
 }
