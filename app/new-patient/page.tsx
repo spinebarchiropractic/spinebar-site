@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "New Patient Information",
   description:
     "Everything you need to know before your first visit to Spine Bar Chiropractic in Toluca Lake. What to bring, what to wear, and what to expect.",
-  alternates: { canonical: "https://spinebar.com/new-patient" },
+    alternates: { canonical: "https://www.spinebar.com/new-patient" },
 };
 
 const steps = [
