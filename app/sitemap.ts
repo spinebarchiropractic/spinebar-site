@@ -4,7 +4,7 @@ import { CONDITIONS, BLOG_POSTS } from "@/lib/constants";
 const ALL_CATEGORIES = Array.from(new Set(BLOG_POSTS.map((p) => p.category)));
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://spinebar.com";
+  const base = "https://www.spinebar.com";
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
