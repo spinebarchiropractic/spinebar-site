@@ -42,9 +42,9 @@ export default async function BlogPostPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://spinebar.com" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://spinebar.com/blog" },
-      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://spinebar.com/blog/${post.slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.spinebar.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.spinebar.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://www.spinebar.com/blog/${post.slug}` },
     ],
   };
 
@@ -60,16 +60,16 @@ export default async function BlogPostPage({ params }: Props) {
       "worksFor": {
         "@type": "MedicalBusiness",
         "name": "Spine Bar Chiropractic",
-        "url": "https://spinebar.com",
+        "url": "https://www.spinebar.com",
       },
     },
     "publisher": {
       "@type": "Organization",
       "name": "Spine Bar Chiropractic",
-      "url": "https://spinebar.com",
+      "url": "https://www.spinebar.com",
     },
     "datePublished": post.date,
-    "url": `https://spinebar.com/blog/${post.slug}`,
+    "url": `https://www.spinebar.com/blog/${post.slug}`,
     "articleSection": post.category,
   };
 
