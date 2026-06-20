@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Conditions Treated",
   description:
     "Spine Bar Chiropractic treats lower back pain, neck pain, sciatica, disc herniation, headaches, sports injuries, and more in Toluca Lake and the surrounding San Fernando Valley.",
-  alternates: { canonical: "https://spinebar.com/conditions" },
+    alternates: { canonical: "https://www.spinebar.com/conditions" },
 };
 
 export default function ConditionsPage() {
