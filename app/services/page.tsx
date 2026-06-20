@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Chiropractic adjustments, soft tissue therapy, prenatal and pediatric care, and wellness consultations at Spine Bar Chiropractic in Toluca Lake.",
-  alternates: { canonical: "https://spinebar.com/services" },
+    alternates: { canonical: "https://www.spinebar.com/services" },
 };
 
 export default function ServicesPage() {
