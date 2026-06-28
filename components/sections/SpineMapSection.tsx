@@ -21,7 +21,7 @@ const SpineScene3D = dynamic(
 );
 
 export function SpineMapSection() {
-  const [activeId, setActiveId] = useState<string>("L4");
+  const [activeId, setActiveId] = useState<string>("C1");
   const [mounted, setMounted] = useState(false);
   const active: SpineSegment =
     SPINE_SEGMENTS.find((s) => s.id === activeId) ?? SPINE_SEGMENTS[0];
