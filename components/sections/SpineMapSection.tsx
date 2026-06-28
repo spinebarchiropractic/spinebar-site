@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SPINE_SEGMENTS, REGION_LABEL, type SpineSegment } from "@/lib/spine-data";
@@ -46,15 +47,86 @@ const LAYOUT: Record<string, { x: number; y: number; h: number }> = {
 };
 
 const CENTER_X = 120;
+const TOTAL = SPINE_SEGMENTS.length;
+
+function AnimatedVertebra({
+  seg,
+  index,
+  isActive,
+  onSelect,
+  scrollYProgress,
+}: {
+  seg: SpineSegment;
+  index: number;
+  isActive: boolean;
+  onSelect: (id: string) => void;
+  scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
+}) {
+  const pos = LAYOUT[seg.id];
+
+  const width = seg.id === "SACRUM" ? 44 : seg.id === "COCCYX" ? 18 : 34;
+  const cx = CENTER_X + pos.x * 4;
+
+  const start = (index / TOTAL) * 0.7;
+  const end = start + 0.7 / TOTAL + 0.04;
+
+  const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
+  const scale = useTransform(scrollYProgress, [start, end], [0.3, 1]);
+  const y = useTransform(scrollYProgress, [start, end], [-12, 0]);
+
+  return (
+    <motion.g
+      style={{ opacity, scale, y, transformOrigin: `${cx}px ${pos.y + pos.h / 2}px` }}
+      onClick={() => onSelect(seg.id)}
+      role="button"
+      tabIndex={0}
+      aria-label={`${seg.label} — view related effects`}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") onSelect(seg.id);
+      }}
+      className="cursor-pointer outline-none"
+    >
+      <rect
+        x={cx - width / 2}
+        y={pos.y}
+        width={width}
+        height={pos.h}
+        rx={seg.id === "SACRUM" ? 12 : 6}
+        fill={REGION_COLOR[seg.region]}
+        opacity={isActive ? 1 : 0.45}
+        stroke={isActive ? "#173326" : "none"}
+        strokeWidth={isActive ? 2 : 0}
+        style={{ transition: "opacity 0.2s, stroke 0.2s" }}
+      />
+      <rect
+        x={cx - width / 2 - 6}
+        y={pos.y - 3}
+        width={width + 12}
+        height={pos.h + 6}
+        fill="transparent"
+      />
+    </motion.g>
+  );
+}
 
 export function SpineMapSection() {
   const [activeId, setActiveId] = useState<string>("L4");
   const active: SpineSegment =
     SPINE_SEGMENTS.find((s) => s.id === activeId) ?? SPINE_SEGMENTS[0];
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 0.85", "start 0.15"],
+  });
+
+  const linePathLength = useTransform(scrollYProgress, [0, 0.75], [0, 1]);
+  const lineOpacity = useTransform(scrollYProgress, [0, 0.08], [0, 0.5]);
+
   return (
     <section
       id="spine-map"
+      ref={sectionRef}
       className="border-t border-cream-border bg-cream py-24 lg:py-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
@@ -69,7 +141,6 @@ export function SpineMapSection() {
 
         <FadeIn delay={0.1}>
           <div className="mt-14 grid gap-10 lg:grid-cols-[280px_1fr] lg:items-start">
-            {/* Spine SVG */}
             <div className="mx-auto w-full max-w-[280px] rounded-3xl border border-cream-border bg-cream-dark p-6">
               <svg
                 viewBox="0 0 240 560"
@@ -77,55 +148,25 @@ export function SpineMapSection() {
                 role="img"
                 aria-label="Interactive diagram of the human spine"
               >
-                <line
+                <motion.line
                   x1={CENTER_X}
                   y1={14}
                   x2={CENTER_X}
                   y2={546}
                   stroke="#e5d9c4"
                   strokeWidth={3}
-                  opacity={0.5}
+                  style={{ opacity: lineOpacity, pathLength: linePathLength }}
                 />
-                {SPINE_SEGMENTS.map((seg) => {
-                  const pos = LAYOUT[seg.id];
-                  if (!pos) return null;
-                  const isActive = seg.id === activeId;
-                  const width = seg.id === "SACRUM" ? 44 : seg.id === "COCCYX" ? 18 : 34;
-                  const cx = CENTER_X + pos.x * 4;
-                  return (
-                    <g
-                      key={seg.id}
-                      onClick={() => setActiveId(seg.id)}
-                      role="button"
-                      tabIndex={0}
-                      aria-label={`${seg.label} — view related effects`}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") setActiveId(seg.id);
-                      }}
-                      className="cursor-pointer outline-none"
-                      style={{ transition: "opacity 0.2s" }}
-                    >
-                      <rect
-                        x={cx - width / 2}
-                        y={pos.y}
-                        width={width}
-                        height={pos.h}
-                        rx={seg.id === "SACRUM" ? 12 : 6}
-                        fill={REGION_COLOR[seg.region]}
-                        opacity={isActive ? 1 : 0.45}
-                        stroke={isActive ? "#173326" : "none"}
-                        strokeWidth={isActive ? 2 : 0}
-                      />
-                      <rect
-                        x={cx - width / 2 - 6}
-                        y={pos.y - 3}
-                        width={width + 12}
-                        height={pos.h + 6}
-                        fill="transparent"
-                      />
-                    </g>
-                  );
-                })}
+                {SPINE_SEGMENTS.map((seg, index) => (
+                  <AnimatedVertebra
+                    key={seg.id}
+                    seg={seg}
+                    index={index}
+                    isActive={seg.id === activeId}
+                    onSelect={setActiveId}
+                    scrollYProgress={scrollYProgress}
+                  />
+                ))}
               </svg>
               <div className="mt-4 flex items-center justify-center gap-5 text-[11px] uppercase tracking-[0.15em] text-green-muted">
                 <span className="flex items-center gap-1.5">
@@ -137,7 +178,6 @@ export function SpineMapSection() {
               </div>
             </div>
 
-            {/* Info panel */}
             <div className="rounded-3xl border border-cream-border bg-cream-dark p-8 lg:p-10">
               <p className="mb-2 text-sm uppercase tracking-[0.3em] text-gold">
                 {REGION_LABEL[active.region]}
