@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { SpineMapSection } from "@/components/sections/SpineMapSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
@@ -28,6 +29,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
+      <SpineMapSection />
       <ServicesSection />
       <AboutSection preview />
       <ReviewsSection />
