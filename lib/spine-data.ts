@@ -1,0 +1,218 @@
+export type SpineRegion = "cervical" | "thoracic" | "lumbar" | "sacral";
+
+export type SpineSegment = {
+  id: string;
+  label: string;
+  region: SpineRegion;
+  effects: string;
+  painPattern: string;
+  relatedConditionSlug?: string;
+};
+
+export const SPINE_SEGMENTS: SpineSegment[] = [
+  {
+    id: "C1",
+    label: "C1 — Atlas",
+    region: "cervical",
+    effects: "Blood supply to the head, pituitary gland, scalp, bones of the face, brain, inner and middle ear, sympathetic nervous system",
+    painPattern: "Headaches, migraines, nervousness, insomnia, head colds, high blood pressure, dizziness",
+    relatedConditionSlug: "headaches",
+  },
+  {
+    id: "C2",
+    label: "C2 — Axis",
+    region: "cervical",
+    effects: "Eyes, optic nerve, auditory nerve, sinuses, mastoid bones, tongue, forehead",
+    painPattern: "Sinus trouble, allergies, eye pain, earache, fainting, certain types of blindness",
+    relatedConditionSlug: "headaches",
+  },
+  {
+    id: "C3",
+    label: "C3",
+    region: "cervical",
+    effects: "Cheeks, outer ear, face bones, teeth, trigeminal nerve",
+    painPattern: "Neuralgia, neuritis, acne or blemished skin",
+    relatedConditionSlug: "neck-pain",
+  },
+  {
+    id: "C4",
+    label: "C4",
+    region: "cervical",
+    effects: "Nose, lips, mouth, eustachian tube",
+    painPattern: "Hay fever, hearing changes, adenoid issues",
+    relatedConditionSlug: "neck-pain",
+  },
+  {
+    id: "C5",
+    label: "C5",
+    region: "cervical",
+    effects: "Vocal cords, neck glands, pharynx",
+    painPattern: "Laryngitis, hoarseness, throat conditions",
+    relatedConditionSlug: "neck-pain",
+  },
+  {
+    id: "C6",
+    label: "C6",
+    region: "cervical",
+    effects: "Neck muscles, shoulders, tonsils",
+    painPattern: "Stiff neck, upper arm pain, tonsillitis, whooping cough, croup",
+    relatedConditionSlug: "tech-neck",
+  },
+  {
+    id: "C7",
+    label: "C7",
+    region: "cervical",
+    effects: "Thyroid gland, bursae in the shoulders, elbows",
+    painPattern: "Thyroid conditions, colds, shoulder pain radiating down the arm",
+    relatedConditionSlug: "shoulder-upper-back",
+  },
+  {
+    id: "T1",
+    label: "T1",
+    region: "thoracic",
+    effects: "Arms from the elbows down, hands, wrists, fingers, esophagus, trachea",
+    painPattern: "Asthma, cough, shortness of breath, numbness in hands and forearms",
+    relatedConditionSlug: "shoulder-upper-back",
+  },
+  {
+    id: "T2",
+    label: "T2",
+    region: "thoracic",
+    effects: "Heart, coronary arteries",
+    painPattern: "Functional heart conditions, chest tightness",
+  },
+  {
+    id: "T3",
+    label: "T3",
+    region: "thoracic",
+    effects: "Lungs, bronchial tubes, pleura, chest",
+    painPattern: "Bronchitis, pleurisy, pneumonia, congestion, difficulty breathing",
+  },
+  {
+    id: "T4",
+    label: "T4",
+    region: "thoracic",
+    effects: "Gallbladder, common bile duct",
+    painPattern: "Gallbladder conditions, jaundice, shingles",
+  },
+  {
+    id: "T5",
+    label: "T5",
+    region: "thoracic",
+    effects: "Liver, solar plexus, blood",
+    painPattern: "Liver conditions, fevers, low blood pressure, poor circulation, arthritis",
+  },
+  {
+    id: "T6",
+    label: "T6",
+    region: "thoracic",
+    effects: "Stomach",
+    painPattern: "Stomach trouble, indigestion, heartburn, dyspepsia",
+  },
+  {
+    id: "T7",
+    label: "T7",
+    region: "thoracic",
+    effects: "Pancreas, duodenum",
+    painPattern: "Ulcers, gastritis, digestive disturbances",
+  },
+  {
+    id: "T8",
+    label: "T8",
+    region: "thoracic",
+    effects: "Spleen",
+    painPattern: "Lowered immune resistance",
+  },
+  {
+    id: "T9",
+    label: "T9",
+    region: "thoracic",
+    effects: "Adrenal glands",
+    painPattern: "Allergies, hives, low energy",
+  },
+  {
+    id: "T10",
+    label: "T10",
+    region: "thoracic",
+    effects: "Kidneys",
+    painPattern: "Kidney trouble, fatigue, circulatory issues",
+  },
+  {
+    id: "T11",
+    label: "T11",
+    region: "thoracic",
+    effects: "Kidneys, ureters",
+    painPattern: "Skin conditions such as acne, eczema, boils",
+  },
+  {
+    id: "T12",
+    label: "T12",
+    region: "thoracic",
+    effects: "Small intestine, lymphatic circulation",
+    painPattern: "Rheumatism, gas pain, sterility (functional)",
+    relatedConditionSlug: "auto-accident",
+  },
+  {
+    id: "L1",
+    label: "L1",
+    region: "lumbar",
+    effects: "Large intestine, inguinal rings",
+    painPattern: "Constipation, colitis, diarrhea",
+    relatedConditionSlug: "lower-back-pain",
+  },
+  {
+    id: "L2",
+    label: "L2",
+    region: "lumbar",
+    effects: "Appendix, abdomen, upper leg",
+    painPattern: "Cramps, difficulty breathing, varicose veins",
+    relatedConditionSlug: "lower-back-pain",
+  },
+  {
+    id: "L3",
+    label: "L3",
+    region: "lumbar",
+    effects: "Sex organs, uterus, bladder, knees",
+    painPattern: "Bladder trouble, menstrual irregularities, knee pain",
+    relatedConditionSlug: "lower-back-pain",
+  },
+  {
+    id: "L4",
+    label: "L4",
+    region: "lumbar",
+    effects: "Prostate, lower back muscles, sciatic nerve",
+    painPattern: "Sciatica, lower back pain, painful or frequent urination",
+    relatedConditionSlug: "sciatica",
+  },
+  {
+    id: "L5",
+    label: "L5",
+    region: "lumbar",
+    effects: "Lower legs, ankles, feet",
+    painPattern: "Poor circulation in the legs, swollen ankles, weak ankles and arches",
+    relatedConditionSlug: "disc-injury",
+  },
+  {
+    id: "SACRUM",
+    label: "Sacrum",
+    region: "sacral",
+    effects: "Hip bones, buttocks, sacroiliac joints",
+    painPattern: "Sacroiliac joint pain, curvature of the spine",
+    relatedConditionSlug: "hip-pain",
+  },
+  {
+    id: "COCCYX",
+    label: "Coccyx",
+    region: "sacral",
+    effects: "Rectum, anus, pelvic floor",
+    painPattern: "Tailbone pain (coccydynia), hemorrhoids",
+    relatedConditionSlug: "hip-pain",
+  },
+];
+
+export const REGION_LABEL: Record<SpineRegion, string> = {
+  cervical: "Cervical spine",
+  thoracic: "Thoracic spine",
+  lumbar: "Lumbar spine",
+  sacral: "Sacral & pelvic",
+};
