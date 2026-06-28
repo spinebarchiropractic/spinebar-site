@@ -57,17 +57,19 @@ function SpineGroup({ activeId, onSelect, scrollProgress }: SceneProps) {
     if (!groupRef.current) return;
     const p = scrollProgress.current;
     // Gentle continuous rotation tied to scroll position — the spine slowly
-    // turns as the user scrolls through the section.
-    groupRef.current.rotation.y = p * Math.PI * 0.6 - 0.3;
-    groupRef.current.position.y = -p * 1.5 + 0.75;
+    // turns as the camera pans down it. Vertical movement is handled by the
+    // camera rig, not the group, so the two don't fight each other.
+    groupRef.current.rotation.y = p * Math.PI * 0.5 - 0.2;
   });
 
   return (
     <group ref={groupRef}>
       {SPINE_SEGMENTS.map((seg, index) => {
         const pos = LAYOUT_3D[seg.id];
-        const revealThreshold = (index / total) * 0.65;
-        const isRevealed = scrollProgress.current >= revealThreshold - 0.65;
+        // Reveal each vertebra slightly before the camera reaches it,
+        // top to bottom, across the full scroll range.
+        const revealThreshold = (index / total) * 0.9;
+        const isRevealed = scrollProgress.current >= revealThreshold;
         return (
           <Vertebra
             key={seg.id}
@@ -84,17 +86,24 @@ function SpineGroup({ activeId, onSelect, scrollProgress }: SceneProps) {
   );
 }
 
+// Spine spans roughly y = 9.4 (C1) down to y = -4.2 (Coccyx).
+const SPINE_TOP_Y = 9.4;
+const SPINE_BOTTOM_Y = -4.2;
+
 function CameraRig({ scrollProgress }: { scrollProgress: { current: number } }) {
   const { camera } = useThree();
 
   useFrame(() => {
     const p = scrollProgress.current;
-    // Camera drifts inward and slightly down as the user scrolls,
-    // creating the sense of moving through/around the spine.
-    camera.position.x = Math.sin(p * Math.PI * 0.4) * 1.2;
-    camera.position.z = 9 - p * 2.5;
-    camera.position.y = 1 - p * 0.6;
-    camera.lookAt(0, 0.5, 0);
+    // The camera pans from the top of the spine to the bottom as the user
+    // scrolls, so every vertebra — not just the middle third — comes into
+    // view and stays clickable. A small horizontal drift and slow orbit
+    // give the sense of moving around the model rather than just sliding.
+    const focusY = SPINE_TOP_Y + (SPINE_BOTTOM_Y - SPINE_TOP_Y) * p;
+    camera.position.x = Math.sin(p * Math.PI * 0.5) * 1.6;
+    camera.position.z = 6.5;
+    camera.position.y = focusY;
+    camera.lookAt(0, focusY, 0);
   });
 
   return null;
@@ -107,7 +116,7 @@ export function SpineScene3D({ activeId, onSelect, scrollProgress }: SceneProps)
     <Canvas
       shadows
       dpr={dpr}
-      camera={{ position: [0, 1, 9], fov: 42 }}
+      camera={{ position: [0, SPINE_TOP_Y, 6.5], fov: 42 }}
       gl={{ antialias: true, alpha: true }}
     >
       <ambientLight intensity={0.55} />
