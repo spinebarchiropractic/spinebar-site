@@ -285,8 +285,8 @@ export const CONDITIONS = [
     icon: "\u25e1",
     title: "Pediatric Spinal Care",
     description:
-      "Children carry spinal stress from sports, heavy backpacks, and screen habits. We use light-contact, age-appropriate adjustments for patients under 18 \u2014 nothing forceful, nothing that doesn\u2019t match their size and presentation.",
-    tags: ["Under 18", "Light contact", "Developmental"],
+      "Children carry spinal stress from sports, heavy backpacks, and screen habits. We use light-contact, age-appropriate adjustments for patients 13 and under \u2014 nothing forceful, nothing that doesn\u2019t match their size and presentation.",
+    tags: ["Under 13", "Light contact", "Developmental"],
     fullDescription: [
       "Children\u2019s spines are not small adult spines \u2014 they\u2019re developing structures that respond to load, posture, and physical stress differently. The increase in screen time, heavy backpack use, and competitive youth sports has produced a generation of young patients presenting with cervical and thoracic dysfunction, postural strain, and repetitive use injuries far earlier than previous generations.",
       "Pediatric chiropractic care at Spine Bar uses light-contact, age-appropriate techniques. There is no forceful manipulation used on pediatric patients. The pressure used for an adjustment on a child is a fraction of what is used for an adult \u2014 more comparable to the pressure you\u2019d use to test the ripeness of a tomato than what most people imagine when they think of a chiropractic adjustment.",
@@ -345,7 +345,7 @@ export const SERVICES = [
   {
     title: "Pediatric Chiropractic",
     description:
-      "For patients under 18. Light-contact adjustments for spinal stress from developmental load, posture, and physical activity.",
+      "For patients 13 and under. Light-contact adjustments for spinal stress from developmental load, posture, and physical activity.",
     icon: "pediatric",
   },
 ] as const;
