@@ -13,18 +13,14 @@ type AboutSectionProps = {
 function DoctorHeadshot({ className = "" }: { className?: string }) {
   return (
     <figure className={className}>
-      <div
-        role="img"
-        aria-label={DOCTOR.headshotAlt}
-        className="relative flex aspect-[4/5] flex-col items-center justify-center gap-3 overflow-hidden rounded-3xl border border-cream-border bg-cream-dark px-6 text-center"
-      >
-        {/* Placeholder slot — replace with <Image> when headshot is ready */}
-        <div className="flex h-24 w-24 items-center justify-center rounded-full border border-gold-light/60 bg-cream">
-          <span className="font-serif text-4xl text-gold">AC</span>
-        </div>
-        <p className="max-w-[12rem] text-xs uppercase tracking-[0.2em] text-gold">
-          Photo coming soon
-        </p>
+      <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-cream-border bg-cream-dark">
+        <Image
+          src={DOCTOR.headshotSrc}
+          alt={DOCTOR.headshotAlt}
+          fill
+          className="object-cover"
+          priority
+        />
       </div>
       <figcaption className="sr-only">{DOCTOR.headshotAlt}</figcaption>
     </figure>
