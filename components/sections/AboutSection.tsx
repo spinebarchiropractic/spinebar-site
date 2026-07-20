@@ -4,6 +4,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { DOCTOR, SITE } from "@/lib/constants";
+import Image from "next/image";
 
 type AboutSectionProps = {
   preview?: boolean;
