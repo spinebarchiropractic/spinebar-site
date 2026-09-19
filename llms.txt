@@ -1,0 +1,38 @@
+# Spine Bar Chiropractic
+
+Spine Bar Chiropractic is a one-on-one chiropractic practice at 10918 Riverside Dr, Toluca Lake, CA 91602. The practice is led by Dr. Arthur Chakrian, DC.
+
+## Primary information
+
+- Website: https://www.spinebar.com/
+- Services hub: https://www.spinebar.com/services
+- Conditions hub: https://www.spinebar.com/conditions
+- Phone: +1-747-774-7144
+- Email: info@spinebar.com
+- Hours: Monday-Friday 9:00am-5:00pm; Saturday 9:00am-1:00pm
+- Services: new-patient chiropractic assessment, chiropractic adjustments, soft tissue therapy, wellness consultation, prenatal chiropractic care, and pediatric chiropractic care
+- Service area: Toluca Lake, Studio City, Burbank, North Hollywood, and Valley Village
+
+## Service pages
+
+- New patient assessment: https://www.spinebar.com/services/new-patient-assessment
+- Chiropractic adjustments: https://www.spinebar.com/services/chiropractic-adjustments
+- Soft tissue therapy: https://www.spinebar.com/services/soft-tissue-therapy
+- Prenatal chiropractic care: https://www.spinebar.com/services/prenatal-chiropractic-care
+- Wellness chiropractic care: https://www.spinebar.com/services/wellness-chiropractic-care
+
+## Condition guides
+
+- Lower back pain: https://www.spinebar.com/conditions/lower-back-pain
+- Neck pain: https://www.spinebar.com/conditions/neck-pain
+- Sciatica: https://www.spinebar.com/conditions/sciatica
+- Disc herniation: https://www.spinebar.com/conditions/disc-herniation
+- Headaches and migraines: https://www.spinebar.com/conditions/headaches-migraines
+- Hip pain: https://www.spinebar.com/conditions/hip-pain
+- Shoulder and upper back pain: https://www.spinebar.com/conditions/shoulder-upper-back-pain
+- Tech neck: https://www.spinebar.com/conditions/tech-neck
+- Sports injuries: https://www.spinebar.com/conditions/sports-injuries
+- Auto accident injuries: https://www.spinebar.com/conditions/auto-accident-injuries
+- Prenatal chiropractic: https://www.spinebar.com/conditions/prenatal
+
+This file is a concise reference. Medical information on the site is educational and is not a diagnosis or a substitute for an in-person assessment.
