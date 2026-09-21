@@ -2312,7 +2312,7 @@
             <div>
               <div class="result-actions">
                 <button class="button result-guide" type="button" disabled>Explore your guide</button>
-                <button class="button outline booking-trigger" type="button">Talk with Dr. Chakrian</button>
+                <a class="button outline" href="https://patient.chirotouch.com/spinebarchiropractic/guest/booking/appointment-type" target="_blank" rel="noreferrer">Talk with Dr. Chakrian</a>
               </div>
               <p class="path-disclaimer">This guide is educational and does not provide a diagnosis or replace an in-person assessment.</p>
             </div>
@@ -2611,22 +2611,6 @@
 
   <button class="drawer-backdrop" type="button" aria-label="Close panel"></button>
 
-  <aside class="drawer booking-drawer" aria-hidden="true" aria-labelledby="booking-drawer-title">
-    <button class="drawer-close" type="button" aria-label="Close booking panel">×</button>
-    <div class="drawer-label">Book at Spine Bar</div>
-    <h2 id="booking-drawer-title">Your first visit starts with a conversation.</h2>
-    <p>Set aside 45–60 minutes for a focused one-on-one visit with Dr. Chakrian. Assessment and same-day care are included when clinically appropriate.</p>
-    <div class="drawer-options">
-      <div class="drawer-option"><span>01</span><div><strong>Choose a time</strong><small>Secure online scheduling</small></div><span>5 min</span></div>
-      <div class="drawer-option"><span>02</span><div><strong>Tell us what brings you in</strong><small>Simple new-patient intake</small></div><span>10 min</span></div>
-      <div class="drawer-option"><span>03</span><div><strong>Meet Dr. Chakrian</strong><small>10918 Riverside Dr, North Hollywood</small></div><span>45–60 min</span></div>
-    </div>
-    <div class="drawer-actions">
-      <a class="button cream" href="https://patient.chirotouch.com/spinebarchiropractic/guest/booking/appointment-type" target="_blank" rel="noreferrer">Continue to secure booking</a>
-      <a class="button outline" href="tel:+17477747144">Call 747-774-7144</a>
-    </div>
-  </aside>
-
   <aside class="drawer article-drawer" aria-hidden="true" aria-labelledby="article-title">
     <button class="drawer-close" type="button" aria-label="Close condition guide">×</button>
     <div class="drawer-label article-label">Movement journal · Preview</div>
@@ -2861,7 +2845,6 @@
     };
 
     const backdrop = document.querySelector('.drawer-backdrop');
-    const bookingDrawer = document.querySelector('.booking-drawer');
     const articleDrawer = document.querySelector('.article-drawer');
     let activeDrawer = null;
     let previousFocus = null;
@@ -2893,16 +2876,6 @@
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape') closeDrawer();
     });
-    document.querySelectorAll('a[href*="patient.chirotouch.com"]').forEach(link => {
-      if (link.closest('.booking-drawer')) return;
-      link.addEventListener('click', event => {
-        event.preventDefault();
-        toggleMenu(false);
-        openDrawer(bookingDrawer);
-      });
-    });
-    document.querySelectorAll('.booking-trigger').forEach(button => button.addEventListener('click', () => openDrawer(bookingDrawer)));
-
     const openArticle = (key, fallbackTitle, fallbackHref) => {
       const article = articleData[key] || {
         title: fallbackTitle || 'Your condition guide',
