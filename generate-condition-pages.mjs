@@ -1,6 +1,9 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 
 const booking = 'https://patient.chirotouch.com/spinebarchiropractic/guest/booking/appointment-type';
+const publishedDate = '2026-08-25';
+const modifiedDate = '2026-09-22';
+const reviewedLabel = 'September 22, 2026';
 const conditions = [
   {
     slug: 'lower-back-pain', title: 'Lower Back Pain', seoTitle: 'Lower Back Pain Care | Toluca Lake Chiropractor', region: 'Lumbar spine & pelvis',
@@ -8,7 +11,7 @@ const conditions = [
     intro: 'Lower back pain can appear suddenly, build over time, or return in a familiar pattern. A useful evaluation looks at how the lumbar spine, pelvis, hips, and surrounding muscles share movement and load.',
     patterns: ['Pain or stiffness after sitting, lifting, or changing positions', 'Reduced bending, rotation, or tolerance for daily activity', 'Recurring flare-ups that improve but never fully resolve'],
     care: ['A detailed history of when symptoms began and what changes them', 'Movement, orthopedic, and hands-on assessment tailored to your presentation', 'A clear explanation of findings and conservative options when appropriate'],
-    related: ['sciatica', 'disc-herniation', 'hip-pain']
+    related: ['sciatica', 'disc-herniation', 'hip-pain', 'auto-accident-injuries']
   },
   {
     slug: 'neck-pain', title: 'Neck Pain', seoTitle: 'Neck Pain Treatment | Toluca Lake Chiropractor', region: 'Cervical spine',
@@ -16,7 +19,7 @@ const conditions = [
     intro: 'Neck discomfort may be influenced by sustained positions, stress, an old injury, restricted joints, or surrounding muscle tension. The goal of an assessment is to understand the pattern rather than treating every neck the same way.',
     patterns: ['Stiffness when turning or looking up and down', 'Tension that spreads toward the shoulders or upper back', 'Symptoms associated with desk work, driving, or sleep position'],
     care: ['Review of symptom behavior, activity demands, and relevant history', 'Assessment of neck, upper-back, shoulder, and nerve function', 'Care adapted to your comfort with findings explained before treatment'],
-    related: ['tech-neck', 'headaches-migraines', 'shoulder-upper-back-pain']
+    related: ['tech-neck', 'headaches-migraines', 'shoulder-upper-back-pain', 'auto-accident-injuries']
   },
   {
     slug: 'sciatica', title: 'Sciatica', region: 'Lower back & nerve pathways',
@@ -145,13 +148,30 @@ const styles = `
 
 const businessSchema = {
   '@type': 'MedicalBusiness', '@id': 'https://www.spinebar.com/#business', name: 'Spine Bar Chiropractic',
-  url: 'https://www.spinebar.com/', telephone: '+1-747-774-7144',
+  alternateName: 'Spine Bar', url: 'https://www.spinebar.com/', telephone: '+1-747-774-7144', email: 'info@spinebar.com',
+  description: 'A one-on-one chiropractic practice serving Toluca Lake and nearby communities, led by Dr. Arthur Chakrian, DC.',
+  image: 'https://www.spinebar.com/assets/spine-bar-hero-sign.webp', logo: 'https://www.spinebar.com/assets/spine-bar-logo.png', priceRange: '$$',
   address: { '@type': 'PostalAddress', streetAddress: '10918 Riverside Dr', addressLocality: 'North Hollywood', addressRegion: 'CA', postalCode: '91602', addressCountry: 'US' },
-  areaServed: ['Toluca Lake', 'North Hollywood', 'Studio City', 'Burbank', 'Valley Village']
+  areaServed: ['Toluca Lake', 'North Hollywood', 'Studio City', 'Burbank', 'Valley Village'],
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '13:00' }
+  ],
+  sameAs: ['https://www.instagram.com/spinebarchiropractic/', 'https://www.zocdoc.com/doctor/arthur-chakrian-dc-805563', 'https://npiregistry.cms.hhs.gov/provider-view/1871430843'],
+  founder: { '@id': 'https://www.spinebar.com/#arthur-chakrian' }
+};
+
+const doctorSchema = {
+  '@type': 'Person', '@id': 'https://www.spinebar.com/#arthur-chakrian', name: 'Dr. Arthur Chakrian', honorificSuffix: 'DC',
+  jobTitle: 'Doctor of Chiropractic', image: 'https://www.spinebar.com/assets/dr-arthur-chakrian.webp',
+  identifier: { '@type': 'PropertyValue', propertyID: 'NPI', value: '1609631449' },
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'Life Chiropractic College West' },
+  hasCredential: { '@type': 'EducationalOccupationalCredential', credentialCategory: 'California chiropractic license', recognizedBy: { '@type': 'Organization', name: 'California Board of Chiropractic Examiners' }, identifier: 'DC 36804' },
+  worksFor: { '@id': 'https://www.spinebar.com/#business' }, sameAs: ['https://www.zocdoc.com/doctor/arthur-chakrian-dc-805563', 'https://npiregistry.cms.hhs.gov/provider-view/1609631449']
 };
 
 function head(title, description, canonical, schema) {
-  return `<!doctype html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${canonical}"><link rel="icon" type="image/webp" href="/assets/spine-bar-logo.webp"><link rel="apple-touch-icon" href="/assets/spine-bar-logo.png"><meta property="og:type" content="article"><meta property="og:site_name" content="Spine Bar Chiropractic"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://www.spinebar.com/assets/spine-bar-og.jpg"><meta property="og:image:alt" content="Spine Bar Chiropractic in Toluca Lake"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="https://www.spinebar.com/assets/spine-bar-og.jpg"><script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': [businessSchema, schema] })}</script><script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script><script defer src="/_vercel/speed-insights/script.js"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="/assets/content-pages.css"></head>`;
+  return `<!doctype html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><meta name="author" content="Dr. Arthur Chakrian, DC"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="${canonical}"><link rel="alternate" hreflang="en-US" href="${canonical}"><link rel="alternate" hreflang="x-default" href="${canonical}"><link rel="icon" type="image/webp" href="/assets/spine-bar-logo.webp"><link rel="apple-touch-icon" href="/assets/spine-bar-logo.png"><meta name="theme-color" content="#17382d"><meta name="geo.region" content="US-CA"><meta name="geo.placename" content="Toluca Lake"><meta property="og:type" content="article"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Spine Bar Chiropractic"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://www.spinebar.com/assets/spine-bar-og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Spine Bar Chiropractic in Toluca Lake"><meta property="article:author" content="https://www.spinebar.com/about"><meta property="article:modified_time" content="${modifiedDate}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="https://www.spinebar.com/assets/spine-bar-og.jpg"><script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': [businessSchema, doctorSchema, schema] })}</script><script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script><script defer src="/_vercel/speed-insights/script.js"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="/assets/content-pages.css"></head>`;
 }
 
 function nav() {
@@ -166,7 +186,8 @@ function detailPage(item) {
   const canonical = `https://www.spinebar.com/conditions/${item.slug}`;
   const schema = {
     '@type': 'MedicalWebPage', '@id': `${canonical}#webpage`, url: canonical, name: `${item.title} | Spine Bar Chiropractic`,
-    description: item.description, dateModified: '2026-09-19', reviewedBy: { '@type': 'Person', name: 'Dr. Arthur Chakrian', honorificSuffix: 'DC' },
+    description: item.description, datePublished: publishedDate, dateModified: modifiedDate, lastReviewed: modifiedDate,
+    author: { '@id': 'https://www.spinebar.com/#arthur-chakrian' }, reviewedBy: { '@id': 'https://www.spinebar.com/#arthur-chakrian' },
     about: { '@id': 'https://www.spinebar.com/#business' },
     breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.spinebar.com/' },
@@ -175,15 +196,15 @@ function detailPage(item) {
     ] }
   };
   const related = item.related.map(slug => `<a class="card" href="/conditions/${slug}"><span>Related guide</span><strong>${esc(bySlug[slug].title)}</strong></a>`).join('');
-  return `${head(item.seoTitle || `${item.title} | Toluca Lake Chiropractor`, item.description, canonical, schema)}<body>${nav()}<main><section class="hero"><div class="shell"><div class="crumbs"><a href="/">Home</a> / <a href="/conditions">Conditions</a> / ${esc(item.title)}</div><div class="eyebrow">${esc(item.region)} · Toluca Lake</div><h1>${esc(item.title)}</h1><p>${esc(item.intro)}</p></div></section><div class="shell grid"><article class="content"><h2>Understanding the pattern</h2><p>Symptoms can have more than one possible source. An in-person assessment helps connect what you feel with your history, movement, and relevant examination findings.</p><h3>Common reasons people seek an evaluation</h3><ul>${item.patterns.map(value => `<li>${esc(value)}</li>`).join('')}</ul><h3>What your first visit may include</h3><ul>${item.care.map(value => `<li>${esc(value)}</li>`).join('')}</ul><div class="note"><strong>Medical note:</strong> This page is educational and is not a diagnosis. Seek urgent medical care for severe or rapidly worsening symptoms, new weakness, loss of bowel or bladder control, saddle numbness, major trauma, chest pain, or other emergency concerns.</div></article><aside class="aside"><strong>Start with a conversation.</strong><p>Your first visit is one-on-one with Dr. Chakrian and includes time to understand what brought you in.</p><a class="button" href="${booking}">Book your visit</a><p><a href="tel:+17477747144">Call 747-774-7144</a></p></aside></div><section class="related"><div class="shell"><h2>Related condition guides</h2><div class="cards">${related}</div></div></section></main>${footer()}</body></html>`;
+  return `${head(item.seoTitle || `${item.title} | Toluca Lake Chiropractor`, item.description, canonical, schema)}<body>${nav()}<main><section class="hero"><div class="shell"><div class="crumbs"><a href="/">Home</a> / <a href="/conditions">Conditions</a> / ${esc(item.title)}</div><div class="eyebrow">${esc(item.region)} · Toluca Lake</div><h1>${esc(item.title)}</h1><p>${esc(item.intro)}</p></div></section><div class="shell grid"><article class="content"><p class="reviewed-by">Clinically reviewed by <a href="/about">Dr. Arthur Chakrian, DC</a> · Last reviewed ${reviewedLabel}</p><h2>Understanding the pattern</h2><p>Symptoms can have more than one possible source. An in-person assessment helps connect what you feel with your history, movement, and relevant examination findings.</p><h3>Common reasons people seek an evaluation</h3><ul>${item.patterns.map(value => `<li>${esc(value)}</li>`).join('')}</ul><h3>What your first visit may include</h3><ul>${item.care.map(value => `<li>${esc(value)}</li>`).join('')}</ul><div class="note"><strong>Medical note:</strong> This page is educational and is not a diagnosis. Seek urgent medical care for severe or rapidly worsening symptoms, new weakness, loss of bowel or bladder control, saddle numbness, major trauma, chest pain, or other emergency concerns.</div></article><aside class="aside"><strong>Start with a conversation.</strong><p>Your first visit is one-on-one with Dr. Chakrian and includes time to understand what brought you in.</p><a class="button" href="${booking}">Book your visit</a><p><a href="tel:+17477747144">Call 747-774-7144</a></p></aside></div><section class="related"><div class="shell"><h2>Related condition guides</h2><div class="cards">${related}</div></div></section></main>${footer()}</body></html>`;
 }
 
 function indexPage() {
   const canonical = 'https://www.spinebar.com/conditions';
   const description = 'Explore common chiropractic conditions evaluated at Spine Bar Chiropractic in Toluca Lake, including back pain, neck pain, sciatica, headaches, and sports injuries.';
-  const schema = { '@type': 'CollectionPage', '@id': `${canonical}#webpage`, url: canonical, name: 'Conditions We Evaluate | Spine Bar Chiropractic', description, about: { '@id': 'https://www.spinebar.com/#business' }, dateModified: '2026-09-19' };
+  const schema = { '@type': 'CollectionPage', '@id': `${canonical}#webpage`, url: canonical, name: 'Conditions We Evaluate | Spine Bar Chiropractic', description, about: { '@id': 'https://www.spinebar.com/#business' }, author: { '@id': 'https://www.spinebar.com/#arthur-chakrian' }, dateModified: modifiedDate, breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.spinebar.com/' }, { '@type': 'ListItem', position: 2, name: 'Conditions', item: canonical }] } };
   const cards = conditions.map(item => `<a class="card" href="/conditions/${item.slug}"><span>${esc(item.region)}</span><strong>${esc(item.title)}</strong></a>`).join('');
-  return `${head('Conditions We Evaluate | Toluca Lake Chiropractor', description, canonical, schema)}<body>${nav()}<main><section class="hero"><div class="shell"><div class="eyebrow">Condition guides · Toluca Lake</div><h1>Understand what may be affecting how you move.</h1><p>Explore common musculoskeletal concerns evaluated by Dr. Arthur Chakrian, DC. Every guide is educational; the right starting point is a personal assessment.</p></div></section><section class="related"><div class="shell"><div class="cards">${cards}</div></div></section><div class="shell grid"><article class="content"><h2>One body, one thoughtful plan.</h2><p>Spine Bar takes time to understand your history, symptoms, and movement before recommending care. If your presentation falls outside the scope of chiropractic care, Dr. Chakrian will explain that and help point you toward an appropriate next step.</p></article><aside class="aside"><strong>Not sure where to begin?</strong><p>Book a first visit or call with a question. There is no pressure to commit to a treatment plan.</p><a class="button" href="${booking}">Book your visit</a></aside></div></main>${footer()}</body></html>`;
+  return `${head('Conditions We Evaluate | Toluca Lake Chiropractor', description, canonical, schema)}<body>${nav()}<main><section class="hero"><div class="shell"><div class="crumbs"><a href="/">Home</a> / Conditions</div><div class="eyebrow">Condition guides · Toluca Lake</div><h1>Understand what may be affecting how you move.</h1><p>Explore common musculoskeletal concerns evaluated by Dr. Arthur Chakrian, DC. Every guide is educational; the right starting point is a personal assessment.</p></div></section><section class="related"><div class="shell"><div class="cards">${cards}</div></div></section><div class="shell grid"><article class="content"><p class="reviewed-by">Clinically reviewed by <a href="/about">Dr. Arthur Chakrian, DC</a> · Last reviewed ${reviewedLabel}</p><h2>One body, one thoughtful plan.</h2><p>Spine Bar takes time to understand your history, symptoms, and movement before recommending care. If your presentation falls outside the scope of chiropractic care, Dr. Chakrian will explain that and help point you toward an appropriate next step.</p></article><aside class="aside"><strong>Not sure where to begin?</strong><p>Book a first visit or call with a question. There is no pressure to commit to a treatment plan.</p><a class="button" href="${booking}">Book your visit</a></aside></div></main>${footer()}</body></html>`;
 }
 
 function servicePage(item) {
@@ -192,7 +213,7 @@ function servicePage(item) {
     '@type': 'Service', '@id': `${canonical}#service`, url: canonical, name: item.title, description: item.description,
     serviceType: item.title, provider: { '@id': 'https://www.spinebar.com/#business' },
     areaServed: { '@type': 'City', name: 'Toluca Lake' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical, dateModified: modifiedDate, author: { '@id': 'https://www.spinebar.com/#arthur-chakrian' } },
     breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.spinebar.com/' },
       { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.spinebar.com/services' },
@@ -200,7 +221,7 @@ function servicePage(item) {
     ] }
   };
   const related = item.related.map(slug => `<a class="card" href="/conditions/${slug}"><span>Related condition guide</span><strong>${esc(bySlug[slug].title)}</strong></a>`).join('');
-  return `${head(item.seoTitle || `${item.title} | Toluca Lake Chiropractor`, item.description, canonical, schema)}<body>${nav()}<main><section class="hero"><div class="shell"><div class="crumbs"><a href="/">Home</a> / <a href="/services">Services</a> / ${esc(item.title)}</div><div class="eyebrow">${esc(item.label)} · Toluca Lake</div><h1>${esc(item.title)}</h1><p>${esc(item.intro)}</p></div></section><div class="shell grid"><article class="content"><h2>Care built around your assessment</h2><p>No technique is appropriate for every person or every presentation. Dr. Chakrian begins with your history and relevant examination findings, explains the options, and adapts care to your comfort and goals.</p><h3>What this service may include</h3><ul>${item.includes.map(value => `<li>${esc(value)}</li>`).join('')}</ul><h3>When it may be a useful fit</h3><ul>${item.suited.map(value => `<li>${esc(value)}</li>`).join('')}</ul><div class="note"><strong>Clinical note:</strong> Services are recommended only after an appropriate assessment. Results vary, and chiropractic care does not replace emergency or medically necessary evaluation.</div></article><aside class="aside"><strong>Start with a focused first visit.</strong><p>Meet one-on-one with Dr. Chakrian to discuss your concern and whether this service fits your presentation.</p><a class="button" href="${booking}">Book your visit</a><p><a href="tel:+17477747144">Call 747-774-7144</a></p></aside></div><section class="related"><div class="shell"><h2>Related condition guides</h2><div class="cards">${related}</div></div></section></main>${footer()}</body></html>`;
+  return `${head(item.seoTitle || `${item.title} | Toluca Lake Chiropractor`, item.description, canonical, schema)}<body>${nav()}<main><section class="hero"><div class="shell"><div class="crumbs"><a href="/">Home</a> / <a href="/services">Services</a> / ${esc(item.title)}</div><div class="eyebrow">${esc(item.label)} · Toluca Lake</div><h1>${esc(item.title)}</h1><p>${esc(item.intro)}</p></div></section><div class="shell grid"><article class="content"><p class="reviewed-by">Service information provided by <a href="/about">Dr. Arthur Chakrian, DC</a> · Updated ${reviewedLabel}</p><h2>Care built around your assessment</h2><p>No technique is appropriate for every person or every presentation. Dr. Chakrian begins with your history and relevant examination findings, explains the options, and adapts care to your comfort and goals.</p><h3>What this service may include</h3><ul>${item.includes.map(value => `<li>${esc(value)}</li>`).join('')}</ul><h3>When it may be a useful fit</h3><ul>${item.suited.map(value => `<li>${esc(value)}</li>`).join('')}</ul><div class="note"><strong>Clinical note:</strong> Services are recommended only after an appropriate assessment. Results vary, and chiropractic care does not replace emergency or medically necessary evaluation.</div></article><aside class="aside"><strong>Start with a focused first visit.</strong><p>Meet one-on-one with Dr. Chakrian to discuss your concern and whether this service fits your presentation.</p><a class="button" href="${booking}">Book your visit</a><p><a href="tel:+17477747144">Call 747-774-7144</a></p></aside></div><section class="related"><div class="shell"><h2>Related condition guides</h2><div class="cards">${related}</div></div></section></main>${footer()}</body></html>`;
 }
 
 function aboutPage() {
@@ -208,14 +229,8 @@ function aboutPage() {
   const description = 'Meet Dr. Arthur Chakrian, DC, the chiropractor at Spine Bar Chiropractic, serving Toluca Lake from 10918 Riverside Dr in North Hollywood.';
   const schema = {
     '@type': 'ProfilePage', '@id': `${canonical}#webpage`, url: canonical,
-    name: 'Dr. Arthur Chakrian, DC | Spine Bar Chiropractic', description, dateModified: '2026-09-19',
-    mainEntity: {
-      '@type': 'Person', '@id': 'https://www.spinebar.com/about#doctor', name: 'Dr. Arthur Chakrian', honorificSuffix: 'DC',
-      jobTitle: 'Chiropractor', image: 'https://www.spinebar.com/assets/dr-arthur-chakrian.webp',
-      alumniOf: { '@type': 'CollegeOrUniversity', name: 'Life Chiropractic College West' },
-      hasCredential: { '@type': 'EducationalOccupationalCredential', credentialCategory: 'California chiropractic license', recognizedBy: { '@type': 'Organization', name: 'California Board of Chiropractic Examiners' }, identifier: 'DC 36804' },
-      worksFor: { '@id': 'https://www.spinebar.com/#business' }
-    },
+    name: 'Dr. Arthur Chakrian, DC | Spine Bar Chiropractic', description, dateModified: modifiedDate,
+    mainEntity: { '@id': 'https://www.spinebar.com/#arthur-chakrian' },
     breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.spinebar.com/' },
       { '@type': 'ListItem', position: 2, name: 'Dr. Arthur Chakrian', item: canonical }
@@ -227,9 +242,9 @@ function aboutPage() {
 function servicesIndexPage() {
   const canonical = 'https://www.spinebar.com/services';
   const description = 'Explore personalized chiropractic services at Spine Bar in Toluca Lake, including assessments, adjustments, soft tissue therapy, prenatal care, and wellness care.';
-  const schema = { '@type': 'CollectionPage', '@id': `${canonical}#webpage`, url: canonical, name: 'Chiropractic Services | Spine Bar Chiropractic', description, about: { '@id': 'https://www.spinebar.com/#business' }, dateModified: '2026-09-19' };
+  const schema = { '@type': 'CollectionPage', '@id': `${canonical}#webpage`, url: canonical, name: 'Chiropractic Services | Spine Bar Chiropractic', description, about: { '@id': 'https://www.spinebar.com/#business' }, author: { '@id': 'https://www.spinebar.com/#arthur-chakrian' }, dateModified: modifiedDate, breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.spinebar.com/' }, { '@type': 'ListItem', position: 2, name: 'Services', item: canonical }] } };
   const cards = services.map(item => `<a class="card" href="/services/${item.slug}"><span>${esc(item.label)}</span><strong>${esc(item.title)}</strong></a>`).join('');
-  return `${head('Chiropractic Services | Toluca Lake Chiropractor', description, canonical, schema)}<body>${nav()}<main><section class="hero"><div class="shell"><div class="eyebrow">Personalized services · Toluca Lake</div><h1>Care that begins with listening.</h1><p>Explore the services available at Spine Bar Chiropractic. Every recommendation is shaped by your history, examination findings, comfort, and goals.</p></div></section><section class="related"><div class="shell"><div class="cards">${cards}</div></div></section><div class="shell grid"><article class="content"><h2>One doctor, one thoughtful plan.</h2><p>Dr. Arthur Chakrian provides one-on-one care and explains the reasoning behind each recommendation. If your presentation is not appropriate for chiropractic care, he will discuss referral or other next steps.</p></article><aside class="aside"><strong>Not sure which service fits?</strong><p>You do not need to choose a technique before your appointment. Begin with a new patient assessment.</p><a class="button" href="${booking}">Book your visit</a></aside></div></main>${footer()}</body></html>`;
+  return `${head('Chiropractic Services | Toluca Lake Chiropractor', description, canonical, schema)}<body>${nav()}<main><section class="hero"><div class="shell"><div class="crumbs"><a href="/">Home</a> / Services</div><div class="eyebrow">Personalized services · Toluca Lake</div><h1>Care that begins with listening.</h1><p>Explore the services available at Spine Bar Chiropractic. Every recommendation is shaped by your history, examination findings, comfort, and goals.</p></div></section><section class="related"><div class="shell"><div class="cards">${cards}</div></div></section><div class="shell grid"><article class="content"><p class="reviewed-by">Service information provided by <a href="/about">Dr. Arthur Chakrian, DC</a> · Updated ${reviewedLabel}</p><h2>One doctor, one thoughtful plan.</h2><p>Dr. Arthur Chakrian provides one-on-one care and explains the reasoning behind each recommendation. If your presentation is not appropriate for chiropractic care, he will discuss referral or other next steps.</p></article><aside class="aside"><strong>Not sure which service fits?</strong><p>You do not need to choose a technique before your appointment. Begin with a new patient assessment.</p><a class="button" href="${booking}">Book your visit</a></aside></div></main>${footer()}</body></html>`;
 }
 
 mkdirSync('conditions', { recursive: true });

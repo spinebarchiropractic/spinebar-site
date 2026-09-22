@@ -4,6 +4,12 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "spinebar.com" }],
+      "destination": "https://www.spinebar.com/:path*",
+      "permanent": true
+    },
     { "source": "/new-patient", "destination": "/services/new-patient-assessment", "permanent": true },
     { "source": "/blog", "destination": "/conditions", "permanent": true },
     { "source": "/spine-bar", "destination": "/", "permanent": true }
